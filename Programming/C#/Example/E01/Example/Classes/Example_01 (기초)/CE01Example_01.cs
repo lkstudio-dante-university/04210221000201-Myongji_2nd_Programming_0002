@@ -11,7 +11,7 @@ namespace E01.Example.Classes.Example_01 {
 	internal class CE01Example_01 {
 		/** 초기화 */
 		public static void Start(string[] args) {
-			Console.WriteLine("Hello, World!");
+			// Do Something
 		}
 	}
 }
