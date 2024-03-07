@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E01.Example.Classes.Example_01
+namespace E01.Example.Classes.Example_04
 {
 	/**
-	 * Example 1
+	 * Example 4
 	 */
-	internal class CE01Example_01
+	internal class CE01Example_04
 	{
 		/** 초기화 */
 		public static void Start(string[] args)
 		{
-			Console.WriteLine("Hello, World!");
+			// Do Something
 		}
 	}
 }
