@@ -1,5 +1,5 @@
 /*
- * #define 명령어는 전처리기 심볼을 선언하는 역할을 수행한다. (즉, 해당 명령어는 C# 명령어가 아니기 때문에
+ * #define 명령어는 전처리기 심볼을 선언하는 역할을 수행한다. (즉, 해당 명령어는 C# 명령어가 아니기 때문에 
  * C# 컴파일러가 아닌 전처리기에 의해서 처리된다.)
  * 
  * 전처리기란?
@@ -56,10 +56,15 @@
 /*
  * C# 의 모든 자료형의 위치는 네임 스페이스 경로로 명시해야한다. (즉, 해당 자료형이 선언 된 파일의 물리적인 경로가
  * 아니라 논리적인 경로가 사용된다는 것을 알 수 있다.)
+ * 
+ * 또한, C# 의 모든 명령문은 ; (세미 콜론) 기호로 마무리 되어야한다. (즉, C# 컴파일러는 해당 기호를 통해 명령문을
+ * 식별한다는 것을 알 수 있다.)
  */
-//E01.Example.Classes.Example_01.CE01Example_01.Start(args);
-E01.Example.Classes.Example_02.CE01Example_02.Start(args);
+E01.Example.Classes.Example_01.CE01Example_01.Start(args);
+//E01.Example.Classes.Example_02.CE01Example_02.Start(args);
 //E01.Example.Classes.Example_03.CE01Example_03.Start(args);
+//E01.Example.Classes.Example_04.CE01Example_04.Start(args);
+//E01.Example.Classes.Example_05.CE01Example_05.Start(args);
 #elif P01_PRACTICE
 
 #elif T01_TRAINING
