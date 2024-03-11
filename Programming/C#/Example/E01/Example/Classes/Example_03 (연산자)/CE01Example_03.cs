@@ -69,6 +69,22 @@ namespace E01.Example.Classes.Example_03
 			int.TryParse(oTokens[0], out nValA);
 			int.TryParse(oTokens[1], out nValB);
 
+			/*
+			 * C# 은 강력 형식 언어 (Strong Type Language) 이기 때문에 특정 데이터를 사용하기 위해서는 반드시
+			 * 처리하기 위한 방법 (자료형) 을 결정해줘야한다.
+			 * 
+			 * 만약, 방법을 명시하지 않을 경우 C# 컴파일러에 의해서 자동으로 처리되기 때문에 원치 않는 결과가
+			 * 나올 수  있다.
+			 * 
+			 * Ex)
+			 * int nValA = 5;
+			 * int nValB = 10;
+			 * 
+			 * float fResult = nValA / nValB;		<- 0
+			 * 
+			 * 위의 결과 정수와 정수를 연산했기 때문에 결과는 0.5 가 아닌 0 이 나온다는 것을 알 수 있다. (즉, 
+			 * 연산의 결과는 연산에 사용 된 피연산자의 자료형을 따라간다는 것을 알 수 있다.)
+			 */
 			Console.WriteLine("=====> 산술 연산자 <=====");
 			Console.WriteLine("{0} + {1} = {2}", nValA, nValB, nValA + nValB);
 			Console.WriteLine("{0} - {1} = {2}", nValA, nValB, nValA - nValB);

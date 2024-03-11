@@ -60,11 +60,14 @@
  * 또한, C# 의 모든 명령문은 ; (세미 콜론) 기호로 마무리 되어야한다. (즉, C# 컴파일러는 해당 기호를 통해 명령문을
  * 식별한다는 것을 알 수 있다.)
  */
-E01.Example.Classes.Example_01.CE01Example_01.Start(args);
+//E01.Example.Classes.Example_01.CE01Example_01.Start(args);
 //E01.Example.Classes.Example_02.CE01Example_02.Start(args);
 //E01.Example.Classes.Example_03.CE01Example_03.Start(args);
 //E01.Example.Classes.Example_04.CE01Example_04.Start(args);
 //E01.Example.Classes.Example_05.CE01Example_05.Start(args);
+//E01.Example.Classes.Example_06.CE01Example_06.Start(args);
+E01.Example.Classes.Example_07.CE01Example_07.Start(args);
+//E01.Example.Classes.Example_08.CE01Example_08.Start(args);
 #elif P01_PRACTICE
 
 #elif T01_TRAINING
