@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E01.Example.Classes.Example_09
+namespace E01.Example.Classes.Example_17
 {
 	/**
-	 * Example 9
+	 * Example 17
 	 */
-	internal class CE01Example_09
+	internal class CE01Example_17
 	{
 		/** 초기화 */
 		public static void Start(string[] args)

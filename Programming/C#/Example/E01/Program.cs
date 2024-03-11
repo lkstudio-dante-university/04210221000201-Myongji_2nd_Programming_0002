@@ -44,12 +44,15 @@
  * 언어의 장점을 모두 지니고 있다는 것을 알 수 있다.
  * 
  * CLR (Common Language Runtime) 이란?
- * - C# 으로 제작 된 프로그램을 구동시키는 환경을 의미한다. (즉, C# 으로 제작 된 명령문은 컴파일러를 통해 IL 코드로
- * 변환되며 이를 CLR 이 최종적으로 기계어로 코드로 변환시킨다는 것을 알 수 있다.)
+ * - C# 으로 제작 된 프로그램을 구동시키는 환경을 의미한다. (즉, C# 으로 제작 된 명령문은 컴퓨터가 이해 할 수 있는
+ * 기계어 코드로 변환되지 않는다는 것을 알 수 있다.)
  * 
- * CLR 은 기계어로 코드로 변환하는 것 뿐만 아니라 예외 처리, 언어 간의 호환성, 메모리 관리 등 프로그램이 구동되기
- * 위해서 필요한 여러 기능을 지원하는 특징이 존재한다. (즉, CLR 은 C# 뿐만 아니라 다양한 언어를 지원하며 이를
- * 활용해서 다양한 프로그램을 제작하는 것이 가능하다.)
+ * C# 은 컴파일 과정을 거치고 나면 중간 언어 인 IL (Immediate Language) 코드로 변환되며 이를 CLR 이 읽어들여서
+ * 최종적으로 기계어 코드로 변환시킨다.
+ * 
+ * 또한, CLR 은 기계어로 코드로 변환하는 것 뿐만 아니라 예외 처리, 언어 간의 호환성, 메모리 관리 등 프로그램이 
+ * 구동되기 위해서 필요한 여러 기능을 지원하는 특징이 존재한다. (즉, CLR 은 C# 뿐만 아니라 다양한 언어를 지원하며 
+ * 이를 활용해서 다양한 프로그램을 제작하는 것이 가능하다.)
  */
 
 #if E01_EXAMPLE
@@ -60,13 +63,13 @@
  * 또한, C# 의 모든 명령문은 ; (세미 콜론) 기호로 마무리 되어야한다. (즉, C# 컴파일러는 해당 기호를 통해 명령문을
  * 식별한다는 것을 알 수 있다.)
  */
-//E01.Example.Classes.Example_01.CE01Example_01.Start(args);
+E01.Example.Classes.Example_01.CE01Example_01.Start(args);
 //E01.Example.Classes.Example_02.CE01Example_02.Start(args);
 //E01.Example.Classes.Example_03.CE01Example_03.Start(args);
 //E01.Example.Classes.Example_04.CE01Example_04.Start(args);
 //E01.Example.Classes.Example_05.CE01Example_05.Start(args);
 //E01.Example.Classes.Example_06.CE01Example_06.Start(args);
-E01.Example.Classes.Example_07.CE01Example_07.Start(args);
+//E01.Example.Classes.Example_07.CE01Example_07.Start(args);
 //E01.Example.Classes.Example_08.CE01Example_08.Start(args);
 #elif P01_PRACTICE
 
