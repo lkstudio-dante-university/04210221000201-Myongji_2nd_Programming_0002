@@ -55,10 +55,13 @@ namespace E01.Example.Classes.Example_09
 			{
 				case '+':
 					return a_nValA + a_nValB;
+
 				case '-':
 					return a_nValA - a_nValB;
+
 				case '*':
 					return a_nValA * a_nValB;
+
 				case '/':
 					return a_nValA / (decimal)a_nValB;
 			}

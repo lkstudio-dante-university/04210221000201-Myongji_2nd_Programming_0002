@@ -3,8 +3,8 @@
  * C# 컴파일러가 아닌 전처리기에 의해서 처리된다.)
  * 
  * 전처리기란?
- * - C# 으로 제작 된 명령문이 컴파일되기 전에 명령문을 튜닝하는 역할을 수행한다. (즉, C# 으로 제작 된 명령문은
- * 전처리 과정을 거치고 나면 변화가 발생 할 수 있다는 것을 알 수 있다.)
+ * - C# 으로 제작 된 명령문이 컴파일되기 전에 명령문을 튜닝하는 역할을 수행한다. (즉, C# 으로 제작 된 명령문은 전처리 
+ * 과정을 거치고 나면 변화가 발생 할 수 있다는 것을 알 수 있다.)
  * 
  * 전처리기에 의해 처리 되는 명령문은 모두 # 기호로 시작하는 특징이 존재하기 때문에 C# 의 명령문과 쉽게 구분이
  * 가능하다.
@@ -13,8 +13,8 @@
  * - #define
  * - #if ~ #else ~ #endif
  * 
- * 전처리기는 C# 과 달리 { } 기호를 통해 영역을 구분하는 것이 불가능하기 때문에 반드시 #endif 명령어를 통해서
- * 특정 전처리기 조건문이 종료되었다는 것을 명시해줘야한다.
+ * 전처리기는 C# 과 달리 { } 기호를 통해 영역을 구분하는 것이 불가능하기 때문에 반드시 #endif 명령어를 통해서 특정 
+ * 전처리기 조건문이 종료되었다는 것을 명시해줘야한다.
  * 
  * Ex)
  * #if 조건 1
@@ -30,7 +30,6 @@
  */
 #define E01_EXAMPLE
 #define P01_PRACTICE
-#define T01_TRAINING
 
 /*
  * C# 이란?
@@ -48,7 +47,8 @@
  * 기계어 코드로 변환되지 않는다는 것을 알 수 있다.)
  * 
  * C# 은 컴파일 과정을 거치고 나면 중간 언어 인 IL (Immediate Language) 코드로 변환되며 이를 CLR 이 읽어들여서
- * 최종적으로 기계어 코드로 변환시킨다.
+ * 최종적으로 기계어 코드로 변환시킨다. (즉, 기계어 코드가 실시간으로 생성되기 때문에 현재 실행 환경에 맞는 최적화 된
+ * 코드가 생성된다는 것을 알 수 있다.)
  * 
  * 또한, CLR 은 기계어로 코드로 변환하는 것 뿐만 아니라 예외 처리, 언어 간의 호환성, 메모리 관리 등 프로그램이 
  * 구동되기 위해서 필요한 여러 기능을 지원하는 특징이 존재한다. (즉, CLR 은 C# 뿐만 아니라 다양한 언어를 지원하며 
@@ -63,16 +63,14 @@
  * 또한, C# 의 모든 명령문은 ; (세미 콜론) 기호로 마무리 되어야한다. (즉, C# 컴파일러는 해당 기호를 통해 명령문을
  * 식별한다는 것을 알 수 있다.)
  */
-//E01.Example.Classes.Example_01.CE01Example_01.Start(args);
+E01.Example.Classes.Example_01.CE01Example_01.Start(args);
 //E01.Example.Classes.Example_02.CE01Example_02.Start(args);
 //E01.Example.Classes.Example_03.CE01Example_03.Start(args);
 //E01.Example.Classes.Example_04.CE01Example_04.Start(args);
 //E01.Example.Classes.Example_05.CE01Example_05.Start(args);
 //E01.Example.Classes.Example_06.CE01Example_06.Start(args);
 //E01.Example.Classes.Example_07.CE01Example_07.Start(args);
-E01.Example.Classes.Example_08.CE01Example_08.Start(args);
+//E01.Example.Classes.Example_08.CE01Example_08.Start(args);
 #elif P01_PRACTICE
-
-#elif T01_TRAINING
 
 #endif // #if E01_EXAMPLE

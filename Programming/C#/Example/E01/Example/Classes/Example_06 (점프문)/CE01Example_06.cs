@@ -1,5 +1,5 @@
-//#define E06_BREAK
-//#define E06_CONTINUE
+#define E06_BREAK
+#define E06_CONTINUE
 #define E06_GOTO
 
 using System;
