@@ -115,8 +115,8 @@ namespace E01.Example.Classes.Example_04
 			 */
 			switch(nScore / 10)
 			{
-				case 10:
 				case 9:
+				case 10:
 					Console.WriteLine("A"); 
 					break;
 
