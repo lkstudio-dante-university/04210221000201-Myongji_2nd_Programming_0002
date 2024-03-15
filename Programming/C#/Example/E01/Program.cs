@@ -71,6 +71,7 @@ E01.Example.Classes.Example_01.CE01Example_01.Start(args);
 //E01.Example.Classes.Example_06.CE01Example_06.Start(args);
 //E01.Example.Classes.Example_07.CE01Example_07.Start(args);
 //E01.Example.Classes.Example_08.CE01Example_08.Start(args);
+//E01.Example.Classes.Example_09.CE01Example_09.Start(args);
 #elif P01_PRACTICE
 
 #endif // #if E01_EXAMPLE
