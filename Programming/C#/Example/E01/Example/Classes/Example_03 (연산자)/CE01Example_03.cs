@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 /*
  * 연산자란?
- * - 데이터를 제어하기 위한 특별한 의미를 지니는 심볼 (기호) 를 의미한다. (즉, 연산자를 활용하면 특정 데이터를
+ * - 데이터를 제어하기 위한 특별한 의미를 지니는 기호 (심볼) 를 의미한다. (즉, 연산자를 활용하면 특정 데이터를
  * 프로그램의 목적에 맞게 제어하는 것이 가능하다.)
  * 
  * C# 의 연산자는 피 연산자의 개수에 따라 단항 연산자, 이항 연산자, 삼항 연산자로 구분된다.
@@ -97,8 +97,8 @@ namespace E01.Example.Classes.Example_03
 			Console.WriteLine("{0} > {1} = {2}", nValA, nValB, nValA > nValB);
 			Console.WriteLine("{0} <= {1} = {2}", nValA, nValB, nValA <= nValB);
 			Console.WriteLine("{0} >= {1} = {2}", nValA, nValB, nValA >= nValB);
-			Console.WriteLine("{0} != {1} = {2}", nValA, nValB, nValA == nValB);
-			Console.WriteLine("{0} == {1} = {2}", nValA, nValB, nValA != nValB);
+			Console.WriteLine("{0} == {1} = {2}", nValA, nValB, nValA == nValB);
+			Console.WriteLine("{0} != {1} = {2}", nValA, nValB, nValA != nValB);
 
 			/*
 			 * 논리 연산자는 논리 자료형의 데이터만 피 연산자로 사용하는 것이 가능하기 떄문에 주의가 필요하다.
@@ -144,12 +144,22 @@ namespace E01.Example.Classes.Example_03
 			Console.WriteLine("\n=====> 후위 증감 연산자 후 <=====");
 			Console.WriteLine("{0}, {1}", nValA, nValB);
 
+			Console.WriteLine("\n=====> 비트 연산자 <=====");
+			Console.WriteLine("{0:b} & {1:b} = {2:b}", nValA, nValB, nValA & nValB);
+			Console.WriteLine("{0:b} | {1:b} = {2:b}", nValA, nValB, nValA | nValB);
+			Console.WriteLine("{0:b} ^ {1:b} = {2:b}", nValA, nValB, nValA ^ nValB);
+			Console.WriteLine("~{0:b} = {1:b}", nValA, ~nValA);
+			Console.WriteLine("{0:b} << 1 = {1:b}", nValA, nValA << 1);
+			Console.WriteLine("{0:b} >> 1 = {1:b}", nValB, nValB >> 1);
+
 			/*
 			 * 조건 연산자는 유일하게 피 연산자를 3 개 요구하기 때문에 삼항 연산자로도 불리운다. (즉, 해당 연산자를
 			 * 제외한 다른 연산자는 모두 단항 연산자이거나 이항 연산자라는 것을 알 수 있다.)
 			 */
+			int nResult = (nValA < nValB) ? nValA : nValB;
+
 			Console.WriteLine("\n=====> 조건 연산자 <=====");
-			Console.WriteLine("({0} < {1}) ? {2} : {3} = {4}", nValA, nValB, nValA, nValB, (nValA < nValB) ? nValA : nValB);
+			Console.WriteLine("({0} < {1}) ? {2} : {3} = {4}", nValA, nValB, nValA, nValB, nResult);
 		}
 	}
 }

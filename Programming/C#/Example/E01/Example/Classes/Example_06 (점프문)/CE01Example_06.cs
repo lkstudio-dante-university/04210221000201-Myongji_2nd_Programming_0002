@@ -1,5 +1,5 @@
-#define E06_BREAK
-#define E06_CONTINUE
+//#define E06_BREAK
+//#define E06_CONTINUE
 #define E06_GOTO
 
 using System;
@@ -49,10 +49,6 @@ namespace E01.Example.Classes.Example_06
 		{
 #if E06_BREAK
 			int i = 0;
-			int nTimes = 0;
-
-			Console.Write("숫자 입력 : ");
-			int.TryParse(Console.ReadLine(), out nTimes);
 
 			while(true)
 			{
@@ -60,7 +56,7 @@ namespace E01.Example.Classes.Example_06
 				i += 1;
 
 				// 반복 종료가 가능 할 경우
-				if(i + 1 >= 5)
+				if(i >= 5)
 				{
 					break;
 				}
