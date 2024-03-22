@@ -1,4 +1,4 @@
-#define E08_COLLECTION_01
+//#define E08_COLLECTION_01
 #define E08_COLLECTION_02
 
 using System;
@@ -40,6 +40,11 @@ namespace E01.Example.Classes.Example_08
 		public static void Start(string[] args)
 		{
 #if E08_COLLECTION_01
+			/*
+			 * Random 클래스란?
+			 * - 난수를 생성해주는 역할을 수행하는 클래스를 의미한다. (즉, Random 클래스를 활용하면 불규칙한 결과를
+			 * 만들어내는 프로그램을 제적하는 것이 가능하다.)
+			 */
 			Random oRandom = new Random();
 			HashSet<int> oValSet = new HashSet<int>();
 
@@ -50,6 +55,11 @@ namespace E01.Example.Classes.Example_08
 
 			Console.WriteLine("=====> 셋 <=====");
 
+			/*
+			 * foreach 반복문이란?
+			 * - 열거 가능한 데이터를 대상으로 사용 가능한 반복문을 의미한다. (즉, 해당 반복문은 컬렉션을 대상으로
+			 * 동작하도록 설계 된 특별한 반복문이라는 것을 알 수 있다.)
+			 */
 			foreach(int nVal in oValSet)
 			{
 				Console.Write("{0}, ", nVal);
@@ -57,7 +67,30 @@ namespace E01.Example.Classes.Example_08
 
 			Console.WriteLine();
 #elif E08_COLLECTION_02
+			Dictionary<string, int> oValDict = new Dictionary<string, int>();
 
+			for(int i = 0; i < 10; ++i)
+			{
+				oValDict.Add($"Key_{i + 1}", i + 1);
+			}
+
+			Console.WriteLine("=====> 딕셔너리 <=====");
+
+			/*
+			 * var 키워드란?
+			 * - 변수의 자료형을 컴파일러가 자동으로 결정하도록 하는 키워드를 의미한다. (즉, var 키워드를 활용하면
+			 * 자료형을 잘 알지 못하더라도 변수를 선언하는 것이 가능하다.)
+			 * 
+			 * 단, 컴파일러는 변수의 초기 값을 기반으로 해당 변수의 자료형을 결정하기 때문에 var 키워드로 선언 된
+			 * 변수는 반드시 초기 값을 명시해줘야한다. (즉, 초기 값을 명시하지 않으면 컴파일 에러가 발생한다는 것을
+			 * 알 수 있다.)
+			 */
+			foreach(var stKeyVal in oValDict)
+			{
+				Console.Write("{0}:{1}, ", stKeyVal.Key, stKeyVal.Value);
+			}
+
+			Console.WriteLine();
 #endif // E08_COLLECTION_01
 		}
 	}

@@ -28,8 +28,9 @@
  *		
  * #endif
  */
-#define E01_EXAMPLE
-#define P01_PRACTICE
+//#define E01_EXAMPLE
+//#define P01_PRACTICE
+#define T01_TRAINING
 
 /*
  * C# 이란?
@@ -68,10 +69,12 @@
 //E01.Example.Classes.Example_03.CE01Example_03.Start(args);
 //E01.Example.Classes.Example_04.CE01Example_04.Start(args);
 //E01.Example.Classes.Example_05.CE01Example_05.Start(args);
-E01.Example.Classes.Example_06.CE01Example_06.Start(args);
+//E01.Example.Classes.Example_06.CE01Example_06.Start(args);
 //E01.Example.Classes.Example_07.CE01Example_07.Start(args);
-//E01.Example.Classes.Example_08.CE01Example_08.Start(args);
+E01.Example.Classes.Example_08.CE01Example_08.Start(args);
 //E01.Example.Classes.Example_09.CE01Example_09.Start(args);
 #elif P01_PRACTICE
 
+#elif T01_TRAINING
+E01.Training.Classes.Training_01.CT01Training_01.Start(args);
 #endif // #if E01_EXAMPLE

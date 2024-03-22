@@ -239,7 +239,7 @@ namespace E01.Example.Classes.Example_07
 
 			for(int i = 0; i < 10; ++i)
 			{
-				var oValList = new List<int>();
+				List<int> oValList = new List<int>();
 
 				for(int j = 0; j < 10; ++j)
 				{
