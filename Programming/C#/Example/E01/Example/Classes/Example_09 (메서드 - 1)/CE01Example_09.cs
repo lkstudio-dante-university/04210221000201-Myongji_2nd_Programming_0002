@@ -38,7 +38,7 @@ namespace E01.Example.Classes.Example_09
 
 			char.TryParse(oTokens[1], out chOperator);
 
-			decimal dmResult = GetCalcResult(nValA, chOperator, nValB);
+			decimal dmResult = GetResultCalc(nValA, chOperator, nValB);
 			Console.WriteLine("{0} {1} {2} = {3}", nValA, chOperator, nValB, dmResult);
 #elif E08_METHOD_02
 
@@ -49,7 +49,7 @@ namespace E01.Example.Classes.Example_09
 
 #if E08_METHOD_01
 		/** 수식 결과를 반환한다 */
-		private static decimal GetCalcResult(int a_nValA, char a_chOperator, int a_nValB)
+		private static decimal GetResultCalc(int a_nValA, char a_chOperator, int a_nValB)
 		{
 			switch(a_chOperator)
 			{

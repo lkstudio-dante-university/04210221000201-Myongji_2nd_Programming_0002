@@ -1,7 +1,7 @@
-#define E07_COLLECTION_01
-#define E07_COLLECTION_02
-#define E07_COLLECTION_03
-#define E07_COLLECTION_04
+//#define E07_COLLECTION_01
+//#define E07_COLLECTION_02
+//#define E07_COLLECTION_03
+//#define E07_COLLECTION_04
 #define E07_COLLECTION_05
 
 using System;
@@ -267,7 +267,7 @@ namespace E01.Example.Classes.Example_07
 			{
 				for(int j = 0; j < oValListB[i].Count; ++j)
 				{
-					Console.Write("{0}, ", oValListB[i][j]);
+					Console.Write("{0,2}, ", oValListB[i][j]);
 				}
 
 				Console.WriteLine();
