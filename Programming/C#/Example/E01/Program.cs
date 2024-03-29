@@ -28,7 +28,8 @@
  *		
  * #endif
  */
-#define E01_EXAMPLE
+//#define E01_EXAMPLE
+//#define P01_PRACTICE
 #define T01_TRAINING
 
 /*
@@ -72,6 +73,9 @@
 //E01.Example.Classes.Example_07.CE01Example_07.Start(args);
 E01.Example.Classes.Example_08.CE01Example_08.Start(args);
 //E01.Example.Classes.Example_09.CE01Example_09.Start(args);
+#elif P01_PRACTICE
+E01.Practice.Classes.Practice_01.CP01Practice_01.Start(args);
 #elif T01_TRAINING
-E01.Training.Classes.Training_01.CT01Training_01.Start(args);
+//E01.Training.Classes.Training_01.CT01Training_01.Start(args);
+E01.Training.Classes.Training_02.CT01Training_02.Start(args);
 #endif // #if E01_EXAMPLE
