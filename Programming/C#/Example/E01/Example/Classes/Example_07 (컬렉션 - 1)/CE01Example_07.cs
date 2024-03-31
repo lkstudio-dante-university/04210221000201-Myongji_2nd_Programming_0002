@@ -224,8 +224,8 @@ namespace E01.Example.Classes.Example_07
 				Console.WriteLine();
 			}
 #elif E07_COLLECTION_04
-			List<int> oValListA = new List<int>();
-			List<List<int>> oValListB = new List<List<int>>();
+			List<int> oListValsA = new List<int>();
+			List<List<int>> oListValsB = new List<List<int>>();
 
 			for(int i = 0; i < 10; ++i)
 			{
@@ -234,66 +234,66 @@ namespace E01.Example.Classes.Example_07
 				 * 거치고 나서야 [] (인덱스 연산자) 를 사용하는 것이 가능하다. (즉, 데이터를 추가하지 않고 특정
 				 * 데이터에 접근하는 시도를 할 경우 런타임 에러가 발생한다는 것을 알 수 있다.)
 				 */
-				oValListA.Add(i + 1);
+				oListValsA.Add(i + 1);
 			}
 
 			for(int i = 0; i < 10; ++i)
 			{
-				List<int> oValList = new List<int>();
+				List<int> oListVals = new List<int>();
 
 				for(int j = 0; j < 10; ++j)
 				{
 					int nBase = i * 10;
-					oValList.Add(nBase + j);
+					oListVals.Add(nBase + j);
 				}
 
 				/*
 				 * 리스트가 제어 할 데이터로 리스트를 명시함으로서 2 차원 이상의 배열과 유사한 구조를 만들어내는 것이 
 				 * 가능하다.
 				 */
-				oValListB.Add(oValList);
+				oListValsB.Add(oListVals);
 			}
 
 			Console.WriteLine("=====> 리스트 A <=====");
 
-			for(int i = 0; i < oValListA.Count; ++i)
+			for(int i = 0; i < oListValsA.Count; ++i)
 			{
-				Console.Write("{0}, ", oValListA[i]);
+				Console.Write("{0}, ", oListValsA[i]);
 			}
 
 			Console.WriteLine("\n\n=====> 리스트 B <=====");
 
-			for(int i = 0; i < oValListB.Count; ++i)
+			for(int i = 0; i < oListValsB.Count; ++i)
 			{
-				for(int j = 0; j < oValListB[i].Count; ++j)
+				for(int j = 0; j < oListValsB[i].Count; ++j)
 				{
-					Console.Write("{0,2}, ", oValListB[i][j]);
+					Console.Write("{0,2}, ", oListValsB[i][j]);
 				}
 
 				Console.WriteLine();
 			}
 #elif E07_COLLECTION_05
-			Stack<int> oValStack = new Stack<int>();
-			Queue<int> oValQueue = new Queue<int>();
+			Stack<int> oStackVals = new Stack<int>();
+			Queue<int> oQueueVals = new Queue<int>();
 
 			for(int i = 0; i < 10; ++i)
 			{
-				oValStack.Push(i + 1);
-				oValQueue.Enqueue(i + 1);
+				oStackVals.Push(i + 1);
+				oQueueVals.Enqueue(i + 1);
 			}
 
 			Console.WriteLine("=====> 스택 <=====");
 
-			while(oValStack.Count >= 1)
+			while(oStackVals.Count >= 1)
 			{
-				Console.Write("{0}, ", oValStack.Pop());
+				Console.Write("{0}, ", oStackVals.Pop());
 			}
 
 			Console.WriteLine("\n\n=====> 큐 <=====");
 
-			while(oValQueue.Count >= 1)
+			while(oQueueVals.Count >= 1)
 			{
-				Console.Write("{0}, ", oValQueue.Dequeue());
+				Console.Write("{0}, ", oQueueVals.Dequeue());
 			}
 
 			Console.WriteLine();

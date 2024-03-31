@@ -46,11 +46,11 @@ namespace E01.Example.Classes.Example_08
 			 * 만들어내는 프로그램을 제적하는 것이 가능하다.)
 			 */
 			Random oRandom = new Random();
-			HashSet<int> oValSet = new HashSet<int>();
+			HashSet<int> oSetVals = new HashSet<int>();
 
 			for(int i = 0; i < 10; ++i)
 			{
-				oValSet.Add(oRandom.Next(0, 10));
+				oSetVals.Add(oRandom.Next(0, 10));
 			}
 
 			Console.WriteLine("=====> 셋 <=====");
@@ -60,18 +60,18 @@ namespace E01.Example.Classes.Example_08
 			 * - 열거 가능한 데이터를 대상으로 사용 가능한 반복문을 의미한다. (즉, 해당 반복문은 컬렉션을 대상으로
 			 * 동작하도록 설계 된 특별한 반복문이라는 것을 알 수 있다.)
 			 */
-			foreach(int nVal in oValSet)
+			foreach(int nVal in oSetVals)
 			{
 				Console.Write("{0}, ", nVal);
 			}
 
 			Console.WriteLine();
 #elif E08_COLLECTION_02
-			Dictionary<string, int> oValDict = new Dictionary<string, int>();
+			Dictionary<string, int> oDictVals = new Dictionary<string, int>();
 
 			for(int i = 0; i < 10; ++i)
 			{
-				oValDict.Add($"Key_{i + 1}", i + 1);
+				oDictVals.Add($"Key_{i + 1}", i + 1);
 			}
 
 			Console.WriteLine("=====> 딕셔너리 <=====");
@@ -85,7 +85,7 @@ namespace E01.Example.Classes.Example_08
 			 * 변수는 반드시 초기 값을 명시해줘야한다. (즉, 초기 값을 명시하지 않으면 컴파일 에러가 발생한다는 것을
 			 * 알 수 있다.)
 			 */
-			foreach(var stKeyVal in oValDict)
+			foreach(var stKeyVal in oDictVals)
 			{
 				Console.Write("{0}:{1}, ", stKeyVal.Key, stKeyVal.Value);
 			}
