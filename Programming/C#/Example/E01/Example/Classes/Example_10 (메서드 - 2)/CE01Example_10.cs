@@ -1,5 +1,5 @@
-#define E10_METHOD_01
-#define E10_METHOD_02
+//#define E10_METHOD_01
+//#define E10_METHOD_02
 #define E10_METHOD_03
 
 using System;
@@ -19,9 +19,9 @@ namespace E01.Example.Classes.Example_10
 		public static void Start(string[] args)
 		{
 #if E10_METHOD_01
-			int nSumValA = GetSumVal(1, 2, 3);
-			int nSumValB = GetSumVal(1, 2, 3, 4, 5, 6);
-			int nSumValC = GetSumVal(1, 2, 3, 4, 5, 6, 7, 8, 9);
+			int nSumValA = GetValSum(1, 2, 3);
+			int nSumValB = GetValSum(1, 2, 3, 4, 5, 6);
+			int nSumValC = GetValSum(1, 2, 3, 4, 5, 6, 7, 8, 9);
 
 			Console.WriteLine("{0}, {1}, {2}", nSumValA, nSumValB, nSumValC);
 #elif E10_METHOD_02
@@ -40,8 +40,8 @@ namespace E01.Example.Classes.Example_10
 			int.TryParse(oTokens[0], out nValA);
 			int.TryParse(oTokens[1], out nValB);
 
-			int nSumVal = GetSumVal(nValA, nValB);
-			float fSumVal = GetSumVal((float)nValA, (float)nValB);
+			int nSumVal = GetValSum(nValA, nValB);
+			float fSumVal = GetValSum((float)nValA, (float)nValB);
 
 			Console.WriteLine("{0}, {1}", nSumVal, fSumVal);
 #elif E10_METHOD_03
@@ -71,7 +71,7 @@ namespace E01.Example.Classes.Example_10
 		 * 원하는 만큼 데이터를 전달하는 것이 가능하다.
 		 */
 		/** 합계를 반환한다 */
-		public static int GetSumVal(params int[] a_oVals)
+		private static int GetValSum(params int[] a_oVals)
 		{
 			int nSumVal = 0;
 
@@ -108,19 +108,19 @@ namespace E01.Example.Classes.Example_10
 		 * 에러가 발생한다는 것을 알 수 있다.)
 		 */
 		/** 합계를 반환한다 */
-		public static int GetSumVal(int a_nValA, int a_nValB)
+		private static int GetValSum(int a_nValA, int a_nValB)
 		{
 			return a_nValA + a_nValB;
 		}
 
 		/** 합계를 반환한다 */
-		public static float GetSumVal(float a_fValA, float a_fValB)
+		private static float GetValSum(float a_fValA, float a_fValB)
 		{
 			return a_fValA + a_fValB;
 		}
 #elif E10_METHOD_03
 		/** 값을 설정한다 */
-		public static void SetupVals(List<int> a_oListVals, int a_nNumVals)
+		private static void SetupVals(List<int> a_oListVals, int a_nNumVals)
 		{
 			var oRandom = new Random();
 			a_oListVals.Clear();
@@ -136,7 +136,7 @@ namespace E01.Example.Classes.Example_10
 		 * 여전히 하나의 데이터만 결과 값으로 반환 할 수 있다.)
 		 */
 		/** 최소, 최대 값을 반환한다 */
-		public static (int, int) GetValMinMax(List<int> a_oListVals)
+		private static (int, int) GetValMinMax(List<int> a_oListVals)
 		{
 			int nMinVal = int.MaxValue;
 			int nMaxVal = int.MinValue;
@@ -151,7 +151,7 @@ namespace E01.Example.Classes.Example_10
 		}
 
 		/** 값을 출력한다 */
-		public static void PrintVals(List<int> a_oListVals)
+		private static void PrintVals(List<int> a_oListVals)
 		{
 			for(int i = 0; i < a_oListVals.Count; ++i)
 			{
