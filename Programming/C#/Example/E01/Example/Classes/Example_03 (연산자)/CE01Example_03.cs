@@ -69,6 +69,8 @@ namespace E01.Example.Classes.Example_03
 			int.TryParse(oTokens[0], out nValA);
 			int.TryParse(oTokens[1], out nValB);
 
+			//int.TryParse(oTokens[0], out int nValC);
+
 			/*
 			 * C# 은 강력 형식 언어 (Strong Type Language) 이기 때문에 특정 데이터를 사용하기 위해서는 반드시
 			 * 처리하기 위한 방법 (자료형) 을 결정해줘야한다.

@@ -1,5 +1,5 @@
-//#define E05_WHILE
-//#define E05_FOR
+#define E05_WHILE
+#define E05_FOR
 #define E05_DO_WHILE
 
 using System;
