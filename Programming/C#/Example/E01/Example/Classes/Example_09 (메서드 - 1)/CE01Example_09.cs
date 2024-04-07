@@ -20,7 +20,7 @@ using System.Threading.Tasks;
  * - 반환 형 (출력) + 메서드 이름 + 매개 변수 (입력) + 메서드 몸체
  * 
  * Ex)
- * int SomeMethod(int a_nValA, int a_nValB)
+ * int MethodSome(int a_nValA, int a_nValB)
  * {
  *		// 메서드가 호출되었을 때 실행 할 명령문
  * }
@@ -29,10 +29,10 @@ using System.Threading.Tasks;
  * 단, 입력 데이터는 필요에 따라 여러 개를 명시하는 것이 가능하지만 출력 데이터는 1 개만 명시하는 것이 가능하다.
  * 
  * C# 메서드 유형
- * - 입력 O, 출력 O		<- int SomeMethod(int a_nValA, int a_nValB)
- * - 입력 O, 출력 X		<- void SomeMethod(int a_nValA, int a_nValB)
- * - 입력 X, 출력 O		<- int SomeMethod()
- * - 입력 X, 출력 X		<- void SomeMethod()
+ * - 입력 O, 출력 O		<- int MethodSome(int a_nValA, int a_nValB)
+ * - 입력 O, 출력 X		<- void MethodSome(int a_nValA, int a_nValB)
+ * - 입력 X, 출력 O		<- int MethodSome()
+ * - 입력 X, 출력 X		<- void MethodSome()
  */
 namespace E01.Example.Classes.Example_09
 {
@@ -68,12 +68,12 @@ namespace E01.Example.Classes.Example_09
 			 * 메서드의 호출은 () (메서드 호출 연산자) 를 사용하면 된다.
 			 * 
 			 * Ex)
-			 * void SomeMethod(int a_nValA, int a_nValB)
+			 * void MethodSome(int a_nValA, int a_nValB)
 			 * {
 			 *		// Do Something
 			 * }
 			 * 
-			 * SomeMethod(10, 20);
+			 * MethodSome(10, 20);
 			 * 
 			 * 위와 같은 호출 할 메서드 이름에 () (메서드 호출 연산자) 를 명시함으로서 특정 메서드를 호출하는 것이 
 			 * 가능하다. (즉, 메서드가 호출되면 메서드 내부에 존재하는 명령문이 실행된다는 것을 알 수 있다.)

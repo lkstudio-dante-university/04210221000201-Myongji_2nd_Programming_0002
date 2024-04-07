@@ -16,7 +16,7 @@ using System.Threading.Tasks;
  * 메서드에 원하는만큼 데이터를 전달하는 것이 가능하다.)
  * 
  * Ex)
- * void SomeMethod(params int[] a_oVals)
+ * void MethodSome(params int[] a_oVals)
  * {
  *		// Do Something
  * }
@@ -31,18 +31,18 @@ using System.Threading.Tasks;
  * (즉, 반환 형은 메서드 오버로딩 여부를 판별하는데 사용하지 않는다는 것을 알 수 있다.)
  * 
  * Ex)
- * void SomeMethod(int a_nVal);
- * void SomeMethod(int a_nValA, int a_nValB);
+ * void MethodSome(int a_nVal);
+ * void MethodSome(int a_nValA, int a_nValB);
  * 
  * 위의 경우 입력 데이터의 개수가 다르기 때문에 메서드 오버로딩이 가능하다.
  * 
- * void SomeMethod(int a_nValA, int a_nValB);
- * void SomeMethod(float a_fValA, float a_fValB);
+ * void MethodSome(int a_nValA, int a_nValB);
+ * void MethodSome(float a_fValA, float a_fValB);
  * 
  * 위의 경우 입력 데이터의 자료형이 다르기 때문에 역시 메서드 오버로딩이 성립한다는 것을 알 수 있다.
  * 
- * int SomeMethod(int a_nVal);
- * void SomeMethod(int a_nVal);
+ * int MethodSome(int a_nVal);
+ * void MethodSome(int a_nVal);
  * 
  * 위의 경우 반환 형은 다르지만 입력 데이터가 동일하기 때문에 메서드 오버로딩이 성립하지 않는다. (즉, 컴파일
  * 에러가 발생한다는 것을 알 수 있다.)
@@ -56,13 +56,13 @@ using System.Threading.Tasks;
  * 된다는 것을 알 수 있다.)
  * 
  * Ex)
- * void SomeMethod(int a_nValA, int a_nValB = 0)
+ * void MethodSome(int a_nValA, int a_nValB = 0)
  * {
  *		// Do Something
  * }
  * 
- * SomeMethod(10);
- * SomeMethod(10, 20);
+ * MethodSome(10);
+ * MethodSome(10, 20);
  * 
  * 위와 같이 a_nValB 매개 변수는 디폴트 매개 변수이기 떄문에 메서드를 호출 시 해당 매개 변수의 입력 데이터를 명시하지
  * 않는다면 자동으로 0 이 할당 된다는 것을 알 수 있다.
@@ -75,13 +75,13 @@ using System.Threading.Tasks;
  * 매개 변수를 지정하는 것이 가능하다.
  * 
  * Ex)
- * void SomeMethod(int a_nValA, int a_nValB)
+ * void MethodSome(int a_nValA, int a_nValB)
  * {
  *		// Do Something
  * }
  * 
- * SomeMethod(10, 20);
- * SomeMethod(a_nValB: 20, a_nValA: 10);
+ * MethodSome(10, 20);
+ * MethodSome(a_nValB: 20, a_nValA: 10);
  * 
  * 위와 같이 입력 데이터를 전달 받을 매개 변수를 명시함으로 매개 변수의 순서와 입력 데이터의 순서가 달라 질 수 있다는
  * 것을 알 수 있다.
