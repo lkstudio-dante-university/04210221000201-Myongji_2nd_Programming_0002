@@ -1,5 +1,5 @@
-#define E11_CLASS_01
-#define E11_CLASS_02
+//#define E11_CLASS_01
+//#define E11_CLASS_02
 #define E11_CLASS_03
 
 using System;
@@ -23,7 +23,7 @@ using System.Threading.Tasks;
  * Ex)
  * class CClassSome
  * {
- *		int m_nVal;
+ *		int m_nVal = 0;
  *		
  *		void ShowInfo()
  *		{
@@ -166,19 +166,7 @@ namespace E01.Example.Classes.Example_11
 			 * (즉, this 키워드는 객체 자기 자신을 의미한다.)
 			 */
 			/** 생성자 */
-			public CPlayer() : this(0)
-			{
-				// Do Something
-			}
-
-			/** 생성자 */
-			public CPlayer(int a_nLV) : this(a_nLV, 0)
-			{
-				// Do Something
-			}
-
-			/** 생성자 */
-			public CPlayer(int a_nLV, int a_nHP) : this(a_nLV, a_nHP, 0)
+			public CPlayer() : this(0, 0, 0)
 			{
 				// Do Something
 			}
@@ -216,7 +204,7 @@ namespace E01.Example.Classes.Example_11
 		 * 
 		 * C# 주요 보호 수준 종류
 		 * - public			<- 모든 곳에서 접근 허용
-		 * - protected		<- 클래스 또는 자식 클래스에서만 접근 허용
+		 * - protected		<- 클래스 내부 또는 자식 클래스에서만 접근 허용
 		 * - private		<- 클래스 내부에서만 접근 허용
 		 * 
 		 * 보호 수준을 지정하는 것은 사용자 (프로그래머) 에 따라 다르지만 일반적으로 멤버 변수는 private 수준으로

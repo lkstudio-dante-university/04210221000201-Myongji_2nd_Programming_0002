@@ -74,8 +74,8 @@
 //E01.Example.Classes.Example_08.CE01Example_08.Start(args);
 //E01.Example.Classes.Example_09.CE01Example_09.Start(args);
 //E01.Example.Classes.Example_10.CE01Example_10.Start(args);
-E01.Example.Classes.Example_11.CE01Example_11.Start(args);
-//E01.Example.Classes.Example_12.CE01Example_12.Start(args);
+//E01.Example.Classes.Example_11.CE01Example_11.Start(args);
+E01.Example.Classes.Example_12.CE01Example_12.Start(args);
 #elif P01_PRACTICE
 //E01.Practice.Classes.Practice_01.CP01Practice_01.Start(args);
 E01.Practice.Classes.Practice_02.CP01Practice_02.Start(args);
