@@ -14,16 +14,32 @@ namespace E01.Practice.Classes.Practice_02
 		/** 초기화 */
 		public static void Start(string[] args)
 		{
+			var oRandom = new Random();
+
 			int nWidth = 35;
 			int nHeight = 10;
 
 			int nPosX = nWidth / 2;
 			int nPosY = nHeight / 2;
 
+			int nDirection = 0; // 0 : Up, 1 : Down, 2 : Left, 3 : Right
+			nDirection = oRandom.Next(0, 4);
+
+			DateTime stPrevTime = DateTime.Now;
+			double dblUpdateSkipTime = 0.0;
+
 			while(true)
 			{
+				DateTime stCurTime = DateTime.Now;
+				TimeSpan stDeltaTime = stCurTime - stPrevTime;
+
+				stPrevTime = stCurTime;
+				dblUpdateSkipTime += stDeltaTime.TotalSeconds;
+
 				Console.Clear();
-				UpdateStateSnake(ref nPosX, ref nPosY, nWidth, nHeight);
+
+				UpdateStateSnake(ref nPosX, 
+					ref nPosY, ref nDirection, nWidth, nHeight, ref dblUpdateSkipTime);
 
 				DrawBoard(nWidth, nHeight);
 				DrawSnake(nPosX, nPosY);
@@ -63,7 +79,8 @@ namespace E01.Practice.Classes.Practice_02
 		}
 
 		/** 스네이크 상태를 갱신한다 */
-		private static void UpdateStateSnake(ref int a_nPosX, ref int a_nPosY, int a_nWidth, int a_nHeight)
+		private static void UpdateStateSnake(ref int a_nPosX,
+			ref int a_nPosY, ref int a_nDirection, int a_nWidth, int a_nHeight, ref double a_dblUpdateSkipTime)
 		{
 			// 방향 키를 눌렀을 경우
 			if(Console.KeyAvailable)
@@ -73,24 +90,38 @@ namespace E01.Practice.Classes.Practice_02
 				switch(stInfoKey.Key)
 				{
 					case ConsoleKey.UpArrow:
-						a_nPosY -= 1;
+						a_nDirection = 0;
 						break;
 
 					case ConsoleKey.DownArrow:
-						a_nPosY += 1;
+						a_nDirection = 1;
 						break;
 
 					case ConsoleKey.LeftArrow:
-						a_nPosX -= 1;
+						a_nDirection = 2;
 						break;
 
 					case ConsoleKey.RightArrow:
-						a_nPosX += 1;
+						a_nDirection = 3;
 						break;
 				}
+			}
 
-				a_nPosX = Math.Clamp(a_nPosX, 1, a_nWidth);
-				a_nPosY = Math.Clamp(a_nPosY, 1, a_nHeight);
+			var oListOffsets = new List<(int, int)>()
+			{
+				(0, -1), (0, 1), (-1, 0), (1, 0)
+			};
+
+			int nOffsetX = oListOffsets[a_nDirection].Item1;
+			int nOffsetY = oListOffsets[a_nDirection].Item2;
+
+			// 일정 시간이 지났을 경우
+			if(a_dblUpdateSkipTime >= 0.15)
+			{
+				a_nPosX = Math.Clamp(a_nPosX + nOffsetX, 1, a_nWidth);
+				a_nPosY = Math.Clamp(a_nPosY + nOffsetY, 1, a_nHeight);
+
+				a_dblUpdateSkipTime = 0.0;
 			}
 		}
 	}

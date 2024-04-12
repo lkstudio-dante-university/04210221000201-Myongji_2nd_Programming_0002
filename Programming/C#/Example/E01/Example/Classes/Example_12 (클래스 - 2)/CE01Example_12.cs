@@ -60,7 +60,7 @@ namespace E01.Example.Classes.Example_12
 			 * 클래스 멤버는 클래스에 종속되기 때문에 객체를 통하지 않고 접근하는 것이 가능하다. (즉, 클래스 멤버는
 			 * 해당 클래스를 통해서 생성 된 모든 객체가 공유하는 멤버라는 것을 알 수 있다.)
 			 */
-			CData.ValFloat = 3.14f;
+			CData.ValFlt = 3.14f;
 
 			Console.WriteLine("=====> 데이터 A <=====");
 			oDataA.ShowInfo();
@@ -69,7 +69,7 @@ namespace E01.Example.Classes.Example_12
 			oDataB.ShowInfo();
 
 			Console.WriteLine("\n=====> 클래스 메서드 <=====");
-			CData.ShowClassInfo();
+			CData.ShowInfoClass();
 #endif // #if E12_CLASS_01
 		}
 
@@ -253,18 +253,18 @@ namespace E01.Example.Classes.Example_12
 		private class CData
 		{
 			public int ValInt { get; set; } = 0;
-			public static float ValFloat { get; set; } = 0.0f;
+			public static float ValFlt { get; set; } = 0.0f;
 
 			/** 정보를 출력한다 */
 			public void ShowInfo()
 			{
-				Console.WriteLine("{0}, {1}", this.ValInt, CData.ValFloat);
+				Console.WriteLine("{0}, {1}", this.ValInt, CData.ValFlt);
 			}
 
 			/** 정보를 출력한다 */
-			public static void ShowClassInfo()
+			public static void ShowInfoClass()
 			{
-				Console.WriteLine("{0}", CData.ValFloat);
+				Console.WriteLine("{0}", CData.ValFlt);
 
 				/*
 				 * 클래스 메서드 내부에서는 클래스 변수에만 접근하는 것이 가능하다. (즉, 멤버 변수는 객체에 종속되기

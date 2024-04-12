@@ -45,12 +45,6 @@ namespace E01.Example.Classes.Example_13
 		{
 			public float ValFlt { get; private set; } = 0.0f;
 
-			/*
-			 * 클래스가 상속 관계에 있을 때 클래스가 지닌 생성자의 호출 순서는 반드시 부모 ~ 자식 순으로 
-			 * 이루어져야한다.
-			 * 
-			 * 단, 생성한 객체의 
-			 */
 			/** 생성자 */
 			public CDerived(int a_nValInt, float a_fValFlt) : base(a_nValInt)
 			{
