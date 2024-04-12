@@ -28,7 +28,7 @@
  *		
  * #endif
  */
-#define E01_EXAMPLE
+//#define E01_EXAMPLE
 #define P01_PRACTICE
 #define T01_TRAINING
 

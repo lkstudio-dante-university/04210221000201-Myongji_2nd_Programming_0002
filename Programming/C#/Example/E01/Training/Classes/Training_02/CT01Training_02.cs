@@ -23,7 +23,7 @@ namespace E01.Training.Classes.Training_02
 			while(true)
 			{
 				Console.Clear();
-				UpdateSnakeState(ref nPosX, ref nPosY, nWidth, nHeight);
+				UpdateStateSnake(ref nPosX, ref nPosY, nWidth, nHeight);
 				
 				DrawBoard(nWidth, nHeight);
 				DrawSnake(nPosX, nPosY);
@@ -63,7 +63,7 @@ namespace E01.Training.Classes.Training_02
 		}
 
 		/** 스네이크 상태를 갱신한다 */
-		private static void UpdateSnakeState(ref int a_nPosX, 
+		private static void UpdateStateSnake(ref int a_nPosX, 
 			ref int a_nPosY, int a_nWidth, int a_nHeight)
 		{
 			// 방향 키를 눌렀을 경우
