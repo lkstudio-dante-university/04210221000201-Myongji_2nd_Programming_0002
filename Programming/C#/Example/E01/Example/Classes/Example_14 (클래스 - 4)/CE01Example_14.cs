@@ -1,4 +1,4 @@
-//#define E14_CLASS_01
+#define E14_CLASS_01
 #define E14_CLASS_02
 
 using System;

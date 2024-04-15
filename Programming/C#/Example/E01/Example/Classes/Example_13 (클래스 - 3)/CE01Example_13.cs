@@ -1,5 +1,5 @@
-#define E13_CLASS_01
-#define E13_CLASS_02
+//#define E13_CLASS_01
+//#define E13_CLASS_02
 #define E13_CLASS_03
 
 using System;
@@ -84,7 +84,7 @@ namespace E01.Example.Classes.Example_13
 		{
 #if E13_CLASS_01
 			var oBase = new CBase(10, 3.14f);
-			var oDerived = new CDerived(10, 3.14f, "Hello, World!");
+			var oDerived = new CDerived(20, 3.14f, "Hello, World!");
 
 			/*
 			 * ValFlt 멤버는 protected 보호 수준으로 명시되어있기 때문에 외부에서 접근이 불가능하다는 것을 알 수
