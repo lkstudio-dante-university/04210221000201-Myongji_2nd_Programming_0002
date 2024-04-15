@@ -1,3 +1,7 @@
+#define E14_GENERIC_01
+#define E14_GENERIC_02
+#define E14_GENERIC_03
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +18,21 @@ namespace E01.Example.Classes.Example_18
 		/** 초기화 */
 		public static void Start(string[] args)
 		{
-			// Do Something
+#if E14_GENERIC_01
+
+#elif E14_GENERIC_02
+
+#elif E14_GENERIC_03
+
+#endif // #if E14_GENERIC_01
 		}
+
+#if E14_GENERIC_01
+
+#elif E14_GENERIC_02
+
+#elif E14_GENERIC_03
+
+#endif // #if E14_GENERIC_01
 	}
 }
