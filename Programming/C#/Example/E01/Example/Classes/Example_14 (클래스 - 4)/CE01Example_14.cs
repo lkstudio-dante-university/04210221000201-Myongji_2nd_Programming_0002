@@ -1,5 +1,6 @@
-#define E14_CLASS_01
-#define E14_CLASS_02
+//#define E14_CLASS_01
+//#define E14_CLASS_02
+#define E14_CLASS_03
 
 using System;
 using System.Collections.Generic;
@@ -109,7 +110,16 @@ namespace E01.Example.Classes.Example_14
 
 			Console.WriteLine("\n\n합계 : {0}", oListVals.ExGetValSum());
 #elif E14_CLASS_03
+			var oVec3A = new CVec3(10.0f, 0.0f, 0.0f);
+			var oVec3B = new CVec3(0.0f, 10.0f, 0.0f);
 
+			float fVal = 10.0f;
+
+			Console.WriteLine("=====> 연산자 오버로딩 <=====");
+			Console.WriteLine("{0} + {1} = {2}", oVec3A, oVec3B, oVec3A + oVec3B);
+			Console.WriteLine("{0} - {1} = {2}", oVec3A, oVec3B, oVec3A - oVec3B);
+			Console.WriteLine("{0} * {1} = {2}", oVec3A, fVal, oVec3A * fVal);
+			Console.WriteLine("{0} / {1} = {2}", oVec3B, fVal, oVec3B / fVal);
 #endif // #if E14_CLASS_01
 		}
 
@@ -157,6 +167,58 @@ namespace E01.Example.Classes.Example_14
 			{
 				base.ShowInfo();
 				Console.WriteLine("Float : {0}", this.ValFlt);
+			}
+		}
+#elif E14_CLASS_03
+		/** 3 차원 벡터 */
+		private class CVec3
+		{
+			public float X { get; set; } = 0.0f;
+			public float Y { get; set; } = 0.0f;
+			public float Z { get; set; } = 0.0f;
+
+			/** 생성자 */
+			public CVec3() : this(0.0f, 0.0f, 0.0f)
+			{
+				// Do Something
+			}
+
+			/** 생성자 */
+			public CVec3(float a_fX, float a_fY, float a_fZ)
+			{
+				this.X = a_fX;
+				this.Y = a_fY;
+				this.Z = a_fZ;
+			}
+
+			/** 문자열로 변환한다 */
+			public override string ToString()
+			{
+				return string.Format("({0}, {1}, {2})", this.X, this.Y, this.Z);
+			}
+
+			/** 덧셈 결과를 반환한다 */
+			public static CVec3 operator +(CVec3 a_oVec3A, CVec3 a_oVec3B)
+			{
+				return new CVec3(a_oVec3A.X + a_oVec3B.X, a_oVec3A.Y + a_oVec3B.Y, a_oVec3A.Z + a_oVec3B.Z);
+			}
+
+			/** 뺄셈 결과를 반환한다 */
+			public static CVec3 operator -(CVec3 a_oVec3A, CVec3 a_oVec3B)
+			{
+				return new CVec3(a_oVec3A.X - a_oVec3B.X, a_oVec3A.Y - a_oVec3B.Y, a_oVec3A.Z - a_oVec3B.Z);
+			}
+
+			/** 스칼라 곱셈 결과를 반환한다 */
+			public static CVec3 operator *(CVec3 a_oVec3, float a_fVal)
+			{
+				return new CVec3(a_oVec3.X * a_fVal, a_oVec3.Y * a_fVal, a_oVec3.Z * a_fVal);
+			}
+
+			/** 스칼라 나눗셈 결과를 반환한다 */
+			public static CVec3 operator /(CVec3 a_oVec3, float a_fVal)
+			{
+				return new CVec3(a_oVec3.X / a_fVal, a_oVec3.Y / a_fVal, a_oVec3.Z / a_fVal);
 			}
 		}
 #endif // #if E14_CLASS_01
