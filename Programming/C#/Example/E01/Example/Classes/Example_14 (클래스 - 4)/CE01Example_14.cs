@@ -32,6 +32,9 @@ using System.Threading.Tasks;
  * 단, 확장 메서드는 클래스 외부에 존재하기 때문에 public 보호 수준 이외에는 접근하는 것이 불가능하다는 단점이
  * 존재한다.
  * 
+ * 또한, 확장 메서드를 구현하기 위한 정적 클래스는 전역 영역에 정의되어야한다. (즉, 특정 영역에 속한 정적 클래스에는
+ * 확장 메서드를 구현하는 것이 불가능하다.)
+ * 
  * Ex)
  * static class CExtension
  * {
@@ -44,7 +47,31 @@ using System.Threading.Tasks;
  * 위와 같이 정적 클래스와 this 키워드를 활용하면 확장 메서드를 구현하는 것이 가능하다.
  * 
  * 연산자 오버로딩이란?
- * - 
+ * - 객체를 대상으로 연산자를 사용 할 수 있게 해주는 기능을 의미한다. (즉, 연산자 오버로딩을 활용하면 객체를 변수처럼 
+ * 제어하는 것이 가능하다.)
+ * 
+ * 클래스를 대상으로 연산자를 사용하기 위해서는 해당 연산자에 대한 기능을 정의 할 필요가 있으며 이는 operator 이름으로
+ * 시작되는 특별한 메서드를 통해 정의하는 것이 가능하다. (즉, 객체를 대상으로 연산자를 사용 할 경우 해당 연산자의
+ * 역할을 수행 할 operator 계열 메서드가 호출된다는 것을 알 수 있다.)
+ * 
+ * Ex)
+ * class CSomeClass
+ * {
+ *		int m_nVal;
+ *		
+ *		static int operator +(CSomeClass a_oSomeObjA, CSomeClass a_oSomeObjB)
+ *		{
+ *			return a_oSomeObjA.m_nVal + a_oSomeObjB.m_nVal;
+ *		}
+ * }
+ * 
+ * var oSomeObjA = new CSomeClass();
+ * var oSomeObjB = new CSomeClass();
+ * 
+ * int nResult = oSomeObjA + oSomeObjB;
+ * 
+ * 위와 같이 객체를 대상으로 연산자를 사용 할 경우 C# 컴파일러는 operator 계열 메서드를 호출해준다는 것을 알 수
+ * 있다.
  */
 #if E14_CLASS_02
 /** 확장 클래스 */
@@ -93,7 +120,7 @@ namespace E01.Example.Classes.Example_14
 
 			CBase oDerived = new CDerived(10, 3.14f);
 
-			Console.WriteLine("\n=====> 자식 클래스 <=====");
+			Console.WriteLine("=====> 자식 클래스 <=====");
 			oDerived.ShowInfo();
 #elif E14_CLASS_02
 			var oRandom = new Random();
@@ -123,10 +150,20 @@ namespace E01.Example.Classes.Example_14
 			Console.WriteLine("{0} - {1} = {2}", oVec3A, oVec3B, oVec3A - oVec3B);
 			Console.WriteLine("{0} * {1} = {2}", oVec3A, fVal, oVec3A * fVal);
 			Console.WriteLine("{0} / {1} = {2}", oVec3B, fVal, oVec3B / fVal);
+			Console.WriteLine("{0} Dot {1} = {2}", oVec3A, oVec3B, oVec3A.GetDot(oVec3B));
+			Console.WriteLine("{0} Cross {1} = {2}", oVec3A, oVec3B, oVec3A.GetCross(oVec3B));
 #endif // #if E14_CLASS_01
 		}
 
 #if E14_CLASS_01
+		/*
+		 * abstract 키워드란?
+		 * - 클래스 또는 메서드를 추상으로 만드는 역할을 수행하는 키워드를 의미한다. (즉, 클래스에 abstract 키워드를
+		 * 명시하면 해당 클래스는 추상 클래스가 된다는 것을 알 수 있다.)
+		 * 
+		 * 추상 클래스는 일반적인 클래스와 달리 객체화시키는 것이 불가능하다. (즉, 추상 클래스는 자식 클래스를 통해
+		 * 간접적으로만 객체화시킬 수 있다는 것을 알 수 있다.)
+		 */
 		/** 부모 클래스 */
 		private abstract class CBase
 		{
@@ -148,10 +185,7 @@ namespace E01.Example.Classes.Example_14
 			 * 시키는 것이 불가능한 추상 클래스가 된다.
 			 */
 			/** 정보를 출력한다 */
-			public virtual void ShowInfo()
-			{
-				Console.WriteLine("Int : {0}", this.ValInt);
-			}
+			public abstract void ShowInfo();
 		}
 
 		/** 자식 클래스 */
@@ -168,7 +202,7 @@ namespace E01.Example.Classes.Example_14
 			/** 정보를 출력한다 */
 			public override void ShowInfo()
 			{
-				base.ShowInfo();
+				Console.WriteLine("Int : {0}", this.ValInt);
 				Console.WriteLine("Float : {0}", this.ValFlt);
 			}
 		}
@@ -179,6 +213,8 @@ namespace E01.Example.Classes.Example_14
 			public float X { get; set; } = 0.0f;
 			public float Y { get; set; } = 0.0f;
 			public float Z { get; set; } = 0.0f;
+
+			public float Length => MathF.Sqrt(MathF.Pow(this.X, 2.0f) + MathF.Pow(this.Y, 2.0f) + MathF.Pow(this.Z, 2.0f));
 
 			/** 생성자 */
 			public CVec3() : this(0.0f, 0.0f, 0.0f)
@@ -198,6 +234,33 @@ namespace E01.Example.Classes.Example_14
 			public override string ToString()
 			{
 				return string.Format("({0}, {1}, {2})", this.X, this.Y, this.Z);
+			}
+
+			/** 내적 결과를 반환한다 */
+			public float GetDot(CVec3 a_oVec3)
+			{
+				float fX = (this.X * a_oVec3.X);
+				float fY = (this.Y * a_oVec3.Y);
+				float fZ = (this.Z * a_oVec3.Z);
+
+				return fX + fY + fZ;
+			}
+
+			/** 외적 결과를 반환한다 */
+			public CVec3 GetCross(CVec3 a_oVec3)
+			{
+				float fX = (this.Y * a_oVec3.Z) - (this.Z * a_oVec3.Y);
+				float fY = (this.Z * a_oVec3.X) - (this.X * a_oVec3.Z);
+				float fZ = (this.X * a_oVec3.Y) - (this.Y * a_oVec3.X);
+
+				return new CVec3(fX, fY, fZ);
+			}
+
+			/** 정규 벡터를 반환한다 */
+			public CVec3 GetNormalize()
+			{
+				float fLength = this.Length;
+				return new CVec3(this.X / fLength, this.Y / fLength, this.Z / fLength);
 			}
 
 			/** 덧셈 결과를 반환한다 */
