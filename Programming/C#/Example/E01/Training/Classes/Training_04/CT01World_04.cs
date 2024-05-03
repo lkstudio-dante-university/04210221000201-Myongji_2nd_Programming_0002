@@ -27,6 +27,12 @@ namespace E01.Training.Classes.Training_04
 		{
 			for(int i = 0; i < this.ListObjects.Count; ++i)
 			{
+				// 상태 갱신이 불가능 할 경우
+				if(this.ListObjects[i].IsDestroy)
+				{
+					continue;
+				}
+
 				this.ListObjects[i].Update(this);
 			}
 		}
