@@ -80,7 +80,7 @@ namespace E01.Practice.Classes.Practice_02
 
 		/** 스네이크 상태를 갱신한다 */
 		private static void UpdateStateSnake(ref int a_nPosX,
-			ref int a_nPosY, ref int a_nDirection, int a_nWidth, int a_nHeight, ref double a_dblUpdateSkipTime)
+			ref int a_nPosY, ref int a_nDirection, int a_nWidth, int a_nHeight, ref double a_dblTimeUpdateSkip)
 		{
 			// 방향 키를 눌렀을 경우
 			if(Console.KeyAvailable)
@@ -116,12 +116,12 @@ namespace E01.Practice.Classes.Practice_02
 			int nOffsetY = oListOffsets[a_nDirection].Item2;
 
 			// 일정 시간이 지났을 경우
-			if(a_dblUpdateSkipTime >= 0.15)
+			if(a_dblTimeUpdateSkip >= 0.15)
 			{
 				a_nPosX = Math.Clamp(a_nPosX + nOffsetX, 1, a_nWidth);
 				a_nPosY = Math.Clamp(a_nPosY + nOffsetY, 1, a_nHeight);
 
-				a_dblUpdateSkipTime = 0.0;
+				a_dblTimeUpdateSkip = 0.0;
 			}
 		}
 	}

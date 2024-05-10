@@ -1,3 +1,6 @@
+//#define T02_VER_01
+#define T02_VER_02
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +14,7 @@ namespace E01.Training.Classes.Training_02
 	 */
 	internal class CT01Training_02
 	{
+#if T02_VER_01
 		/** 초기화 */
 		public static void Start(string[] args)
 		{
@@ -94,5 +98,19 @@ namespace E01.Training.Classes.Training_02
 				a_nPosY = Math.Clamp(a_nPosY, 1, a_nHeight);
 			}
 		}
+#elif T02_VER_02
+		/** 초기화 */
+		public static void Start(string[] args)
+		{
+			var oWorld = new CT01World_02(35, 15);
+			Console.CursorVisible = false;
+
+			do
+			{
+				oWorld.Draw();
+				oWorld.PrintBuffer();
+			} while(true);
+		}
+#endif
 	}
 }

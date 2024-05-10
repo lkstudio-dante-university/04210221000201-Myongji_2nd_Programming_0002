@@ -50,26 +50,29 @@ namespace E01.Example.Classes.Example_12
 
 			Console.WriteLine();
 #elif E12_CLASS_03
-			var oDataA = new CData();
-			oDataA.ValInt = 10;
+			//CData.ValFloat = 10.0f;
+			//CData.ShowClassInfo();
 
-			var oDataB = new CData();
-			oDataB.ValInt = 20;
+			//var oDataA = new CData();
+			//oDataA.ValInt = 10;
 
-			/*
-			 * 클래스 멤버는 클래스에 종속되기 때문에 객체를 통하지 않고 접근하는 것이 가능하다. (즉, 클래스 멤버는
-			 * 해당 클래스를 통해서 생성 된 모든 객체가 공유하는 멤버라는 것을 알 수 있다.)
-			 */
-			CData.ValFlt = 3.14f;
+			//var oDataB = new CData();
+			//oDataB.ValInt = 20;
 
-			Console.WriteLine("=====> 데이터 A <=====");
-			oDataA.ShowInfo();
+			///*
+			// * 클래스 멤버는 클래스에 종속되기 때문에 객체를 통하지 않고 접근하는 것이 가능하다. (즉, 클래스 멤버는
+			// * 해당 클래스를 통해서 생성 된 모든 객체가 공유하는 멤버라는 것을 알 수 있다.)
+			// */
+			//CData.ValFlt = 3.14f;
 
-			Console.WriteLine("\n=====> 데이터 B <=====");
-			oDataB.ShowInfo();
+			//Console.WriteLine("=====> 데이터 A <=====");
+			//oDataA.ShowInfo();
 
-			Console.WriteLine("\n=====> 클래스 메서드 <=====");
-			CData.ShowInfoClass();
+			//Console.WriteLine("\n=====> 데이터 B <=====");
+			//oDataB.ShowInfo();
+
+			//Console.WriteLine("\n=====> 클래스 메서드 <=====");
+			//CData.ShowInfoClass();
 #endif // #if E12_CLASS_01
 		}
 
