@@ -106,11 +106,11 @@ namespace E01.Example.Classes.Example_15
 				case ETypeItem.GOLD:
 					Console.WriteLine("재화를 획득했습니다.");
 					break;
-				
+
 				case ETypeItem.EQUIP:
 					Console.WriteLine("장비를 획득했습니다.");
 					break;
-				
+
 				case ETypeItem.POTION:
 					Console.WriteLine("물약을 획득했습니다.");
 					break;

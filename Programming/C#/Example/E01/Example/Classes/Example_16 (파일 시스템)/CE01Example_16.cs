@@ -1,5 +1,5 @@
-#define E16_FILE_SYSTEM_01
-#define E16_FILE_SYSTEM_02
+//#define E16_FILE_SYSTEM_01
+//#define E16_FILE_SYSTEM_02
 #define E16_FILE_SYSTEM_03
 
 using System;
@@ -58,7 +58,7 @@ namespace E01.Example.Classes.Example_16
 			 * File.Open 메서드는 스트림을 생성하는 역할을 수행한다. (즉, 해당 메서드에 입력되는 데이터에 따라
 			 * 출력용 또는 입력용 스트림을 생성하는 것이 가능하다.)
 			 */
-			var oWStream = File.Open("Example/Example_16/E16_FileSystem_01.txt", 
+			var oWStream = File.Open("Example/Example_16/E01Example_16_01.txt", 
 				FileMode.Create, FileAccess.Write);
 
 			// 스트림이 생성되었을 경우
@@ -84,7 +84,7 @@ namespace E01.Example.Classes.Example_16
 				oWriter.Close();
 			}
 
-			var oRStream = File.Open("Example/Example_16/E16_FileSystem_01.txt",
+			var oRStream = File.Open("Example/Example_16/E01Example_16_01.txt",
 				FileMode.Open, FileAccess.Read);
 
 			// 스트림이 생성되었을 경우
@@ -111,7 +111,7 @@ namespace E01.Example.Classes.Example_16
 				Directory.CreateDirectory("Example/Example_16");
 			}
 
-			var oWStream = File.Open("Example/Example_16/E16_FileSystem_02.bin", 
+			var oWStream = File.Open("Example/Example_16/E01Example_16_02.bin", 
 				FileMode.Create, FileAccess.Write);
 
 			// 스트림이 생성되었을 경우
@@ -137,7 +137,7 @@ namespace E01.Example.Classes.Example_16
 				oWriter.Close();
 			}
 
-			var oRStream = File.Open("Example/Example_16/E16_FileSystem_02.bin",
+			var oRStream = File.Open("Example/Example_16/E01Example_16_02.bin",
 				FileMode.Open, FileAccess.Read);
 
 			// 스트림이 생성되었을 경우
@@ -145,16 +145,46 @@ namespace E01.Example.Classes.Example_16
 			{
 				var oReader = new BinaryReader(oRStream);
 
-				while(oReader.PeekChar() > 0)
+				while(oReader.BaseStream.Position < oReader.BaseStream.Length)
 				{
 					Console.Write("{0}, ", oReader.ReadInt32());
 				}
 
-				Console.WriteLine();
 				oReader.Close();
+				Console.WriteLine();
 			}
 #elif E16_FILE_SYSTEM_03
+			/*
+			 * args 배열에는 프로그램을 실행 할 때 추가적으로 전달 한 데이터가 문자열의 형태로 저장되어있기 때문에 
+			 * 해당 변수를 활용하면 프로그램을 시작 시 추가적인 옵션을 전달받는 것이 가능하다. (즉, args 배열을
+			 * 활용하면 터미널 명령어처럼 동작하는 프로그램을 제작하는 것이 가능하다.)
+			 */
+			// 잘못 된 형식 일 경우
+			if(args.Length < 2)
+			{
+				Console.WriteLine("[실행 파일] [원본 파일 경로] [사본 파일 경로] 형식으로 입력해주세요.");
+				return;
+			}
 
+			var oRStream = File.Open(args[0], FileMode.Open, FileAccess.Read);
+			var oWStream = File.Open(args[1], FileMode.Create, FileAccess.Write);
+
+			// 스트림이 생성되었을 경우
+			if(oRStream != null && oWStream != null)
+			{
+				var oBytes = new byte[byte.MaxValue];
+				int nNumBytes = 0;
+
+				while((nNumBytes = oRStream.Read(oBytes, 0, oBytes.Length)) > 0)
+				{
+					oWStream.Write(oBytes, 0, nNumBytes);
+				}
+
+				oRStream.Close();
+				oWStream.Close();
+
+				Console.WriteLine("파일 복사가 완료되었습니다.");
+			}
 #endif // #if E16_FILE_SYSTEM_01
 		}
 	}

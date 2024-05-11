@@ -65,16 +65,16 @@ namespace E01.Example.Classes.Example_07
 		public static void Start(string[] args)
 		{
 #if E07_COLLECTION_01
-			int[] oValsA = new int[5];
-			oValsA[0] = 1;
-			oValsA[1] = 2;
-			oValsA[2] = 3;
+			int[] oValuesA = new int[5];
+			oValuesA[0] = 1;
+			oValuesA[1] = 2;
+			oValuesA[2] = 3;
 
 			/*
 			 * 배열을 생성 후 초기화 값을 명시 할 경우 반드시 배열의 길이만큼 초기화 값을 명시해줘야한다. (즉, 배열의
 			 * 길이와 초기화 값의 개수가 다를 경우 컴파일 에러가 발생한다는 것을 알 수 있다.)
 			 */
-			int[] oValsB = new int[5]
+			int[] oValuesB = new int[5]
 			{
 				1, 2, 3, 4, 5
 			};
@@ -86,7 +86,7 @@ namespace E01.Example.Classes.Example_07
 			 * 계산 할 수 있도록 해줘야한다. (즉, 길이가 명시되지 않은 배열에 초기화를 해주지 않을 경우 컴파일 에러가
 			 * 발생한다는 것을 알 수 있다.)
 			 */
-			int[] oValsC = new int[]
+			int[] oValuesC = new int[]
 			{
 				1, 2, 3
 			};
@@ -96,23 +96,23 @@ namespace E01.Example.Classes.Example_07
 			/*
 			 * 배열은 Length 프로퍼티를 제공하며 해당 프로퍼티를 사용해서 배열의 길이를 가져오는 것이 가능하다.
 			 */
-			for(int i = 0; i < oValsA.Length; ++i)
+			for(int i = 0; i < oValuesA.Length; ++i)
 			{
-				Console.Write("{0}, ", oValsA[i]);
+				Console.Write("{0}, ", oValuesA[i]);
 			}
 
 			Console.WriteLine("\n\n=====> 배열 B <=====");
 
-			for(int i = 0; i < oValsB.Length; ++i)
+			for(int i = 0; i < oValuesB.Length; ++i)
 			{
-				Console.Write("{0}, ", oValsB[i]);
+				Console.Write("{0}, ", oValuesB[i]);
 			}
 
 			Console.WriteLine("\n\n=====> 배열 C <=====");
 
-			for(int i = 0; i < oValsC.Length; ++i)
+			for(int i = 0; i < oValuesC.Length; ++i)
 			{
-				Console.Write("{0}, ", oValsC[i]);
+				Console.Write("{0}, ", oValuesC[i]);
 			}
 
 			Console.WriteLine();
@@ -197,35 +197,35 @@ namespace E01.Example.Classes.Example_07
 			 * - 배열을 관리하는 배열을 의미한다. (즉, 일반적으로 배열은 특정 자료형의 데이터를 관리하지만
 			 * 가변 배열은 배열을 관리한다는 것을 알 수 있다.)
 			 */
-			int[][] oVals = new int[3][];
+			int[][] oValues = new int[3][];
 
-			for(int i = 0; i < oVals.Length; ++i)
+			for(int i = 0; i < oValues.Length; ++i)
 			{
-				oVals[i] = new int[(i + 1) * 3];
+				oValues[i] = new int[(i + 1) * 3];
 			}
 
-			for(int i = 0; i < oVals.Length; ++i)
+			for(int i = 0; i < oValues.Length; ++i)
 			{
-				for(int j = 0; j < oVals[i].Length; ++j)
+				for(int j = 0; j < oValues[i].Length; ++j)
 				{
-					oVals[i][j] = j + 1;
+					oValues[i][j] = j + 1;
 				}
 			}
 
 			Console.WriteLine("=====> 가변 배열 <=====");
 
-			for(int i = 0; i < oVals.Length; ++i)
+			for(int i = 0; i < oValues.Length; ++i)
 			{
-				for(int j = 0; j < oVals[i].Length; ++j)
+				for(int j = 0; j < oValues[i].Length; ++j)
 				{
-					Console.Write("{0}, ", oVals[i][j]);
+					Console.Write("{0}, ", oValues[i][j]);
 				}
 
 				Console.WriteLine();
 			}
 #elif E07_COLLECTION_04
-			List<int> oListValsA = new List<int>();
-			List<List<int>> oListValsB = new List<List<int>>();
+			List<int> oListValuesA = new List<int>();
+			List<List<int>> oListValuesB = new List<List<int>>();
 
 			for(int i = 0; i < 10; ++i)
 			{
@@ -234,66 +234,66 @@ namespace E01.Example.Classes.Example_07
 				 * 거치고 나서야 [] (인덱스 연산자) 를 사용하는 것이 가능하다. (즉, 데이터를 추가하지 않고 특정
 				 * 데이터에 접근하는 시도를 할 경우 런타임 에러가 발생한다는 것을 알 수 있다.)
 				 */
-				oListValsA.Add(i + 1);
+				oListValuesA.Add(i + 1);
 			}
 
 			for(int i = 0; i < 10; ++i)
 			{
-				List<int> oListVals = new List<int>();
+				List<int> oListValues = new List<int>();
 
 				for(int j = 0; j < 10; ++j)
 				{
 					int nBase = i * 10;
-					oListVals.Add(nBase + j);
+					oListValues.Add(nBase + j);
 				}
 
 				/*
 				 * 리스트가 제어 할 데이터로 리스트를 명시함으로서 2 차원 이상의 배열과 유사한 구조를 만들어내는 것이 
 				 * 가능하다.
 				 */
-				oListValsB.Add(oListVals);
+				oListValuesB.Add(oListValues);
 			}
 
 			Console.WriteLine("=====> 리스트 A <=====");
 
-			for(int i = 0; i < oListValsA.Count; ++i)
+			for(int i = 0; i < oListValuesA.Count; ++i)
 			{
-				Console.Write("{0}, ", oListValsA[i]);
+				Console.Write("{0}, ", oListValuesA[i]);
 			}
 
 			Console.WriteLine("\n\n=====> 리스트 B <=====");
 
-			for(int i = 0; i < oListValsB.Count; ++i)
+			for(int i = 0; i < oListValuesB.Count; ++i)
 			{
-				for(int j = 0; j < oListValsB[i].Count; ++j)
+				for(int j = 0; j < oListValuesB[i].Count; ++j)
 				{
-					Console.Write("{0,2}, ", oListValsB[i][j]);
+					Console.Write("{0,2}, ", oListValuesB[i][j]);
 				}
 
 				Console.WriteLine();
 			}
 #elif E07_COLLECTION_05
-			Stack<int> oStackVals = new Stack<int>();
-			Queue<int> oQueueVals = new Queue<int>();
+			Stack<int> oStackValues = new Stack<int>();
+			Queue<int> oQueueValues = new Queue<int>();
 
 			for(int i = 0; i < 10; ++i)
 			{
-				oStackVals.Push(i + 1);
-				oQueueVals.Enqueue(i + 1);
+				oStackValues.Push(i + 1);
+				oQueueValues.Enqueue(i + 1);
 			}
 
 			Console.WriteLine("=====> 스택 <=====");
 
-			while(oStackVals.Count >= 1)
+			while(oStackValues.Count >= 1)
 			{
-				Console.Write("{0}, ", oStackVals.Pop());
+				Console.Write("{0}, ", oStackValues.Pop());
 			}
 
 			Console.WriteLine("\n\n=====> 큐 <=====");
 
-			while(oQueueVals.Count >= 1)
+			while(oQueueValues.Count >= 1)
 			{
-				Console.Write("{0}, ", oQueueVals.Dequeue());
+				Console.Write("{0}, ", oQueueValues.Dequeue());
 			}
 
 			Console.WriteLine();

@@ -34,18 +34,18 @@ namespace E01.Example.Classes.Example_12
 			Console.WriteLine("\n=====> 플레이어 B <=====");
 			oPlayerB.ShowInfo();
 #elif E12_CLASS_02
-			var oVals = new CArray(10);
+			var oValues = new CArray(10);
 
-			for(int i = 0; i < oVals.NumVals; ++i)
+			for(int i = 0; i < oValues.NumValues; ++i)
 			{
-				oVals[i] = i + 1;
+				oValues[i] = i + 1;
 			}
 
 			Console.WriteLine("=====> 배열 <=====");
 
-			for(int i = 0; i < oVals.NumVals; ++i)
+			for(int i = 0; i < oValues.NumValues; ++i)
 			{
-				Console.Write("{0}, ", oVals[i]);
+				Console.Write("{0}, ", oValues[i]);
 			}
 
 			Console.WriteLine();
@@ -201,13 +201,13 @@ namespace E01.Example.Classes.Example_12
 		/** 배열 */
 		private class CArray
 		{
-			private int[] m_oVals = null;
-			public int NumVals => m_oVals.Length;
+			private int[] m_oValues = null;
+			public int NumValues => m_oValues.Length;
 
 			/** 생성자 */
 			public CArray(int a_nSize)
 			{
-				m_oVals = new int[a_nSize];
+				m_oValues = new int[a_nSize];
 			}
 
 			/*
@@ -230,19 +230,19 @@ namespace E01.Example.Classes.Example_12
 					 * 않고 무시된다는 것을 알 수 있다.)
 					 */
 					Debug.Assert(this.IsValidIdx(a_nIdx));
-					return m_oVals[a_nIdx];
+					return m_oValues[a_nIdx];
 				}
 				set
 				{
 					Debug.Assert(this.IsValidIdx(a_nIdx));
-					m_oVals[a_nIdx] = value;
+					m_oValues[a_nIdx] = value;
 				}
 			}
 
 			/** 인덱스 유효 여부를 검사한다 */
 			private bool IsValidIdx(int a_nIdx)
 			{
-				return a_nIdx >= 0 && a_nIdx < m_oVals.Length;
+				return a_nIdx >= 0 && a_nIdx < m_oValues.Length;
 			}
 		}
 #elif E12_CLASS_03

@@ -38,7 +38,7 @@ namespace E01.Practice.Classes.Practice_02
 
 				Console.Clear();
 
-				UpdateStateSnake(ref nPosX, 
+				UpdateStateSnake(ref nPosX,
 					ref nPosY, ref nDirection, nWidth, nHeight, ref dblUpdateSkipTime);
 
 				DrawBoard(nWidth, nHeight);

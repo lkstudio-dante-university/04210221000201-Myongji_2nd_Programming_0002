@@ -91,7 +91,7 @@ public static class CExtension
 	}
 
 	/** 값을 출력한다 */
-	public static void ExPrintVals(this List<int> a_oSender)
+	public static void ExPrintValues(this List<int> a_oSender)
 	{
 		for(int i = 0; i < a_oSender.Count; ++i)
 		{
@@ -124,11 +124,11 @@ namespace E01.Example.Classes.Example_14
 			oDerived.ShowInfo();
 #elif E14_CLASS_02
 			var oRandom = new Random();
-			var oListVals = new List<int>();
+			var oListValues = new List<int>();
 
 			for(int i = 0; i < 10; ++i)
 			{
-				oListVals.Add(oRandom.Next(1, 100));
+				oListValues.Add(oRandom.Next(1, 100));
 			}
 
 			/*
@@ -136,9 +136,9 @@ namespace E01.Example.Classes.Example_14
 			 * 호출하는 것이 가능하다.
 			 */
 			Console.WriteLine("=====> 리스트 <=====");
-			oListVals.ExPrintVals();
+			oListValues.ExPrintValues();
 
-			Console.WriteLine("\n\n합계 : {0}", oListVals.ExGetValSum());
+			Console.WriteLine("\n\n합계 : {0}", oListValues.ExGetValSum());
 #elif E14_CLASS_03
 			var oVec3A = new CVec3(10.0f, 0.0f, 0.0f);
 			var oVec3B = new CVec3(0.0f, 10.0f, 0.0f);

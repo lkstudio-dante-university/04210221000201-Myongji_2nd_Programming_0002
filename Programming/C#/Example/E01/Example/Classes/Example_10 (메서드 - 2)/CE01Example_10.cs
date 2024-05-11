@@ -16,7 +16,7 @@ using System.Threading.Tasks;
  * 메서드에 원하는만큼 데이터를 전달하는 것이 가능하다.)
  * 
  * Ex)
- * void MethodSome(params int[] a_oVals)
+ * void MethodSome(params int[] a_oValues)
  * {
  *		// Do Something
  * }
@@ -129,13 +129,13 @@ namespace E01.Example.Classes.Example_10
 
 			Console.WriteLine("{0}, {1}", nSumVal, fSumVal);
 #elif E10_METHOD_03
-			var oListVals = new List<int>();
-			SetupVals(oListVals, 10);
+			var oListValues = new List<int>();
+			SetupValues(oListValues, 10);
 
 			Console.WriteLine("=====> 리스트 요소 <=====");
-			PrintVals(oListVals);
+			PrintValues(oListValues);
 
-			var stResult = GetValMinMax(oListVals);
+			var stResult = GetValMinMax(oListValues);
 
 			/*
 			 * 튜플의 각 요소에 별도의 이름을 명시하지 않았을 경우 기본적으로 Item1 부터 차례대로 각 요소의 이름이
@@ -165,13 +165,13 @@ namespace E01.Example.Classes.Example_10
 		 * 원하는 만큼 데이터를 전달하는 것이 가능하다.
 		 */
 		/** 합계를 반환한다 */
-		private static int GetValSum(params int[] a_oVals)
+		private static int GetValSum(params int[] a_oValues)
 		{
 			int nSumVal = 0;
 
-			for(int i = 0; i < a_oVals.Length; ++i)
+			for(int i = 0; i < a_oValues.Length; ++i)
 			{
-				nSumVal += a_oVals[i];
+				nSumVal += a_oValues[i];
 			}
 
 			return nSumVal;
@@ -190,14 +190,14 @@ namespace E01.Example.Classes.Example_10
 		}
 #elif E10_METHOD_03
 		/** 값을 설정한다 */
-		private static void SetupVals(List<int> a_oListVals, int a_nNumVals)
+		private static void SetupValues(List<int> a_oListValues, int a_nNumValues)
 		{
 			var oRandom = new Random();
-			a_oListVals.Clear();
+			a_oListValues.Clear();
 
-			for(int i = 0; i < a_nNumVals; ++i)
+			for(int i = 0; i < a_nNumValues; ++i)
 			{
-				a_oListVals.Add(oRandom.Next(0, 100));
+				a_oListValues.Add(oRandom.Next(0, 100));
 			}
 		}
 
@@ -206,26 +206,26 @@ namespace E01.Example.Classes.Example_10
 		 * 여전히 하나의 데이터만 결과 값으로 반환 할 수 있다.)
 		 */
 		/** 최소, 최대 값을 반환한다 */
-		private static (int, int) GetValMinMax(List<int> a_oListVals)
+		private static (int, int) GetValMinMax(List<int> a_oListValues)
 		{
 			int nMinVal = int.MaxValue;
 			int nMaxVal = int.MinValue;
 
-			for(int i = 0; i < a_oListVals.Count; ++i)
+			for(int i = 0; i < a_oListValues.Count; ++i)
 			{
-				nMinVal = Math.Min(nMinVal, a_oListVals[i]);
-				nMaxVal = Math.Max(nMaxVal, a_oListVals[i]);
+				nMinVal = Math.Min(nMinVal, a_oListValues[i]);
+				nMaxVal = Math.Max(nMaxVal, a_oListValues[i]);
 			}
 
 			return (nMinVal, nMaxVal);
 		}
 
 		/** 값을 출력한다 */
-		private static void PrintVals(List<int> a_oListVals)
+		private static void PrintValues(List<int> a_oListValues)
 		{
-			for(int i = 0; i < a_oListVals.Count; ++i)
+			for(int i = 0; i < a_oListValues.Count; ++i)
 			{
-				Console.Write("{0}, ", a_oListVals[i]);
+				Console.Write("{0}, ", a_oListValues[i]);
 			}
 
 			Console.WriteLine();

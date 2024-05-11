@@ -126,7 +126,7 @@ namespace E01.Example.Classes.Example_04
 			{
 				case 9:
 				case 10:
-					Console.WriteLine("A"); 
+					Console.WriteLine("A");
 					break;
 
 				case 8:
