@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 452031099}
   - component: {fileID: 452031098}
   m_Layer: 0
-  m_Name: MainLight
+  m_Name: LightMain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 728414617}
   - component: {fileID: 728414618}
   m_Layer: 0
-  m_Name: SceneManager
+  m_Name: ManagerScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -337,7 +337,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1586456774}
   m_Layer: 0
-  m_Name: StaticObjs
+  m_Name: ObjsStatic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -403,7 +403,7 @@ GameObject:
   - component: {fileID: 1738978428}
   - component: {fileID: 1738978427}
   m_Layer: 0
-  m_Name: MainCamera
+  m_Name: CameraMain
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
