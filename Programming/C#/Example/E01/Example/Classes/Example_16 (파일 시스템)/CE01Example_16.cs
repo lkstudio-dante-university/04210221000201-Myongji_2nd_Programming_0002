@@ -1,5 +1,5 @@
-//#define E16_FILE_SYSTEM_01
-//#define E16_FILE_SYSTEM_02
+#define E16_FILE_SYSTEM_01
+#define E16_FILE_SYSTEM_02
 #define E16_FILE_SYSTEM_03
 
 using System;
@@ -40,15 +40,17 @@ namespace E01.Example.Classes.Example_16
 		/** 초기화 */
 		public static void Start(string[] args)
 		{
+			string oPathDir = "../../../Example/Resources/Example_16";
+
 #if E16_FILE_SYSTEM_01
 			/*
 			 * Directory 클래스는 디렉토리 (폴더) 를 제어하는 역할을 수행한다. (즉, Directory 클래스를 활용하면 
 			 * 폴더를 생성하거나 폴더 안에 존재하는 파일의 목록을 가져오는 것이 가능하다.)
 			 */
 			// 디렉토리가 없을 경우
-			if(!Directory.Exists("Example/Example_16"))
+			if(!Directory.Exists(oPathDir))
 			{
-				Directory.CreateDirectory("Example/Example_16");
+				Directory.CreateDirectory(oPathDir);
 			}
 
 			/*
@@ -57,9 +59,12 @@ namespace E01.Example.Classes.Example_16
 			 * 
 			 * File.Open 메서드는 스트림을 생성하는 역할을 수행한다. (즉, 해당 메서드에 입력되는 데이터에 따라
 			 * 출력용 또는 입력용 스트림을 생성하는 것이 가능하다.)
+			 * 
+			 * 또한, File.Open 메서드는 스트림을 출력용으로 생성 할 경우 파일을 생성하는 역할도 수행한다. (즉, 
+			 * 존재하지 않는 파일을 대상으로 출력용 스트림을 생성 할 경우 파일을 생성 후 스트림을 생성한다는 것을
+			 * 알 수 있다.)
 			 */
-			var oWStream = File.Open("Example/Example_16/E01Example_16_01.txt", 
-				FileMode.Create, FileAccess.Write);
+			var oWStream = File.Open(oPathDir + "/E01Example_16_01.txt", FileMode.Create, FileAccess.Write);
 
 			// 스트림이 생성되었을 경우
 			if(oWStream != null)
@@ -84,8 +89,7 @@ namespace E01.Example.Classes.Example_16
 				oWriter.Close();
 			}
 
-			var oRStream = File.Open("Example/Example_16/E01Example_16_01.txt",
-				FileMode.Open, FileAccess.Read);
+			var oRStream = File.Open(oPathDir + "/E01Example_16_01.txt", FileMode.Open, FileAccess.Read);
 
 			// 스트림이 생성되었을 경우
 			if(oRStream != null)
@@ -106,13 +110,12 @@ namespace E01.Example.Classes.Example_16
 			}
 #elif E16_FILE_SYSTEM_02
 			// 디렉토리가 없을 경우
-			if(!Directory.Exists("Example/Example_16"))
+			if(!Directory.Exists(oPathDir))
 			{
-				Directory.CreateDirectory("Example/Example_16");
+				Directory.CreateDirectory(oPathDir);
 			}
 
-			var oWStream = File.Open("Example/Example_16/E01Example_16_02.bin", 
-				FileMode.Create, FileAccess.Write);
+			var oWStream = File.Open(oPathDir + "/E01Example_16_02.bin", FileMode.Create, FileAccess.Write);
 
 			// 스트림이 생성되었을 경우
 			if(oWStream != null)
@@ -137,14 +140,18 @@ namespace E01.Example.Classes.Example_16
 				oWriter.Close();
 			}
 
-			var oRStream = File.Open("Example/Example_16/E01Example_16_02.bin",
-				FileMode.Open, FileAccess.Read);
+			var oRStream = File.Open(oPathDir + "/E01Example_16_02.bin", FileMode.Open, FileAccess.Read);
 
 			// 스트림이 생성되었을 경우
 			if(oRStream != null)
 			{
 				var oReader = new BinaryReader(oRStream);
 
+				/*
+				 * 파일 스트림의 Position 프로퍼티와 Length 프로퍼티를 활용하면 파일에 존재하는 데이터를 모두 
+				 * 읽어들이는 것이 가능하다. (즉, Position 프로퍼티는 현재 읽어들일 데이터의 위치 정보를 나타내며 
+				 * 파일로부터 데이터를 읽어들 일 때마다 위치가 자동으로 갱신된다는 것을 알 수 있다.)
+				 */
 				while(oReader.BaseStream.Position < oReader.BaseStream.Length)
 				{
 					Console.Write("{0}, ", oReader.ReadInt32());
