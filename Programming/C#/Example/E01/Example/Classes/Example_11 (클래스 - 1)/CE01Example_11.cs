@@ -47,9 +47,33 @@ namespace E01.Example.Classes.Example_11
 	 */
 	internal class CE01Example_11
 	{
+		public static void LevelUp(ref int a_nLV, 
+			ref int a_nHP, ref int a_nATK, ref int a_nDEF)
+		{
+			a_nLV += 1;
+			a_nHP += 10;
+			a_nATK += 15;
+			a_nDEF += 5;
+		}
+
 		/** 초기화 */
 		public static void Start(string[] args)
 		{
+			int nPlayerALV = 0;
+			int nPlayerAHP = 0;
+			int nPlayerAATK = 0;
+			int nPlayerADEF = 0;
+
+			int nPlayerBLV = 0;
+			int nPlayerBHP = 0;
+			int nPlayerBATK = 0;
+			int nPlayerBDEF = 0;
+
+			LevelUp(ref nPlayerBLV, 
+				ref nPlayerAHP, ref nPlayerAATK, ref nPlayerADEF);
+
+
+
 #if E11_CLASS_01
 			/*
 			 * 클래스를 통해서 생성 된 객체는 하위에 변수와 메서드 등을 지니고 있으며 이러한 멤버는 
@@ -247,6 +271,12 @@ namespace E01.Example.Classes.Example_11
 			/** 레벨을 변경한다 */
 			public void SetLV(int a_nLV)
 			{
+				//if(a_nLV > 50)
+				//{
+				//	Console.WriteLine("너 누구냐?");
+				//	return;
+				//}
+
 				m_nLV = a_nLV;
 			}
 

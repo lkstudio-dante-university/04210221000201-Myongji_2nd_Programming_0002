@@ -1,5 +1,5 @@
-#define E16_FILE_SYSTEM_01
-#define E16_FILE_SYSTEM_02
+//#define E16_FILE_SYSTEM_01
+//#define E16_FILE_SYSTEM_02
 #define E16_FILE_SYSTEM_03
 
 using System;
