@@ -1,5 +1,5 @@
-#define E17_DELEGATE_01
-#define E17_DELEGATE_02
+//#define E17_DELEGATE_01
+//#define E17_DELEGATE_02
 #define E17_DELEGATE_03
 
 using System;
