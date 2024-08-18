@@ -75,7 +75,15 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # Extra
+**/Packages/*-*/
+!**/Packages/00000300000001-[Cc]ommon/
+!**/Packages/00000300000001-[Pp]ackage/
+!**/Packages/00000301000201-[Uu]nity/
+!**/Packages/00000301000301-[Uu]nreal/
+
 .vscode/
+mono_crash.*
+/[Aa]ssets/[Gg]eneratedLocalRepo.meta
 
 /[Ee]xport/
 /[Oo]utput/
@@ -83,8 +91,5 @@ crashlytics-build.properties
 /[Uu]nity[Pp]ackages/
 /[Ss]erialized[Bb]uildInfo/
 /[Aa]ssets/[Gg]enerated[Ll]ocal[Rr]epo/
-
-mono_crash.*
-/[Aa]ssets/[Gg]eneratedLocalRepo.meta
 
 # End of https://www.toptal.com/developers/gitignore/api/unity
