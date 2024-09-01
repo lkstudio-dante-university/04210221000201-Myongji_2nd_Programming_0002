@@ -28,9 +28,9 @@
  *		
  * #endif
  */
-#define E01_EXAMPLE
-#define P01_PRACTICE
-#define T01_TRAINING
+#define EXAMPLE
+#define PRACTICE
+#define TRAINING
 
 /*
  * C# 이란?
@@ -63,7 +63,7 @@ namespace Example
 		/** 메인 메서드 */
 		public static void Main(string[] args)
 		{
-#if E01_EXAMPLE
+#if EXAMPLE
 			/*
 			 * C# 의 모든 자료형의 위치는 네임 스페이스 경로로 명시해야한다. (즉, 해당 자료형이 선언 된 파일의 물리적인 경로가
 			 * 아니라 논리적인 경로가 사용된다는 것을 알 수 있다.)
@@ -71,34 +71,34 @@ namespace Example
 			 * 또한, C# 의 모든 명령문은 ; (세미 콜론) 기호로 마무리 되어야한다. (즉, C# 컴파일러는 해당 기호를 통해 명령문을
 			 * 식별한다는 것을 알 수 있다.)
 			 */
-			//_04010000000001_Myongji.Example.E01.Classes.Runtime.Example_01.CE01Example_01.Start(args);
-			//_04010000000001_Myongji.Example.E01.Classes.Runtime.Example_02.CE01Example_02.Start(args);
-			//_04010000000001_Myongji.Example.E01.Classes.Runtime.Example_03.CE01Example_03.Start(args);
-			//_04010000000001_Myongji.Example.E01.Classes.Runtime.Example_04.CE01Example_04.Start(args);
-			//_04010000000001_Myongji.Example.E01.Classes.Runtime.Example_05.CE01Example_05.Start(args);
-			//_04010000000001_Myongji.Example.E01.Classes.Runtime.Example_06.CE01Example_06.Start(args);
-			//_04010000000001_Myongji.Example.E01.Classes.Runtime.Example_07.CE01Example_07.Start(args);
-			//_04010000000001_Myongji.Example.E01.Classes.Runtime.Example_08.CE01Example_08.Start(args);
-			//_04010000000001_Myongji.Example.E01.Classes.Runtime.Example_09.CE01Example_09.Start(args);
-			//_04010000000001_Myongji.Example.E01.Classes.Runtime.Example_10.CE01Example_10.Start(args);
-			//_04010000000001_Myongji.Example.E01.Classes.Runtime.Example_11.CE01Example_11.Start(args);
-			//_04010000000001_Myongji.Example.E01.Classes.Runtime.Example_12.CE01Example_12.Start(args);
-			//_04010000000001_Myongji.Example.E01.Classes.Runtime.Example_13.CE01Example_13.Start(args);
-			//_04010000000001_Myongji.Example.E01.Classes.Runtime.Example_14.CE01Example_14.Start(args);
-			//_04010000000001_Myongji.Example.E01.Classes.Runtime.Example_15.CE01Example_15.Start(args);
-			//_04010000000001_Myongji.Example.E01.Classes.Runtime.Example_16.CE01Example_16.Start(args);
-			_04010000000001_Myongji.Example.E01.Classes.Runtime.Example_17.CE01Example_17.Start(args);
-#elif P01_PRACTICE
-			//_04010000000001_Myongji.Practice.P01.Classes.Runtime.Practice_01.CP01Practice_01.Start(args);
-			_04010000000001_Myongji.Practice.P01.Classes.Runtime.Practice_02.CP01Practice_02.Start(args);
-#elif T01_TRAINING
-			//_04010000000001_Myongji.Training.T01.Classes.Runtime.Training_01.CT01Training_01.Start(args);
-			//_04010000000001_Myongji.Training.T01.Classes.Runtime.Training_02.CT01Training_02.Start(args);
-			//_04010000000001_Myongji.Training.T01.Classes.Runtime.Training_03.CT01Training_03.Start(args);
-			//_04010000000001_Myongji.Training.T01.Classes.Runtime.Training_04.CT01Training_04.Start(args);
-			//_04010000000001_Myongji.Training.T01.Classes.Runtime.Training_05.CT01Training_05.Start(args);
-			_04010000000001_Myongji.Training.T01.Classes.Runtime.Training_06.CT01Training_06.Start(args);
-#endif // #if E01_EXAMPLE
+			//_04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_01.CE01Example_01.Start(args);
+			//_04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_02.CE01Example_02.Start(args);
+			//_04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_03.CE01Example_03.Start(args);
+			//_04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_04.CE01Example_04.Start(args);
+			//_04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_05.CE01Example_05.Start(args);
+			//_04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_06.CE01Example_06.Start(args);
+			//_04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_07.CE01Example_07.Start(args);
+			//_04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_08.CE01Example_08.Start(args);
+			//_04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_09.CE01Example_09.Start(args);
+			//_04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_10.CE01Example_10.Start(args);
+			//_04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_11.CE01Example_11.Start(args);
+			//_04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_12.CE01Example_12.Start(args);
+			//_04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_13.CE01Example_13.Start(args);
+			//_04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_14.CE01Example_14.Start(args);
+			//_04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_15.CE01Example_15.Start(args);
+			//_04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_16.CE01Example_16.Start(args);
+			_04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_17.CE01Example_17.Start(args);
+#elif PRACTICE
+			//_04010203000201_Myongji_2nd_Programming_0002.E01.Practice.Classes.Runtime.Practice_01.CP01Practice_01.Start(args);
+			_04010203000201_Myongji_2nd_Programming_0002.E01.Practice.Classes.Runtime.Practice_02.CP01Practice_02.Start(args);
+#elif TRAINING
+			//_04010203000201_Myongji_2nd_Programming_0002.E01.Training.Classes.Runtime.Training_01.CT01Training_01.Start(args);
+			//_04010203000201_Myongji_2nd_Programming_0002.E01.Training.Classes.Runtime.Training_02.CT01Training_02.Start(args);
+			//_04010203000201_Myongji_2nd_Programming_0002.E01.Training.Classes.Runtime.Training_03.CT01Training_03.Start(args);
+			//_04010203000201_Myongji_2nd_Programming_0002.E01.Training.Classes.Runtime.Training_04.CT01Training_04.Start(args);
+			//_04010203000201_Myongji_2nd_Programming_0002.E01.Training.Classes.Runtime.Training_05.CT01Training_05.Start(args);
+			_04010203000201_Myongji_2nd_Programming_0002.E01.Training.Classes.Runtime.Training_06.CT01Training_06.Start(args);
+#endif // #if EXAMPLE
 		}
 	}
 }
