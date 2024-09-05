@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Example
+namespace E01Example
 {
 	/**
 	 * 카메라 제어자
