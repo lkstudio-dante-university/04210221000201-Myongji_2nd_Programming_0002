@@ -4,5 +4,9 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/04010203000201-Myongji_2nd_Programming_0002/E02/Example/Scenes/E02Example_01
+      (Basic).unity
+    guid: e8d245dc9f5d6ea44983a1c8066e5415
   m_configObjects: {}
