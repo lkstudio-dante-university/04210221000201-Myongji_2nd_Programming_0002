@@ -101,7 +101,7 @@ public static class CExtension
 }
 #endif // #if E14_CLASS_02
 
-namespace Example._04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_14
+namespace Example._04010203000201_M_2_Programming_0002.E01.Example.Classes.Runtime.Example_14
 {
 	/**
 	 * Example 14

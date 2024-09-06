@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 
-namespace Example._04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_12
+namespace Example._04010203000201_M_2_Programming_0002.E01.Example.Classes.Runtime.Example_12
 {
 	/**
 	 * Example 12

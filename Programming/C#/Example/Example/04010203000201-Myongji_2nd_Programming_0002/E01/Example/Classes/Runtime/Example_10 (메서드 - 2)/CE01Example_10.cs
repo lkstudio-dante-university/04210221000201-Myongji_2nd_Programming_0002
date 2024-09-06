@@ -86,7 +86,7 @@ using System.Threading.Tasks;
  * 위와 같이 입력 데이터를 전달 받을 매개 변수를 명시함으로 매개 변수의 순서와 입력 데이터의 순서가 달라 질 수 있다는
  * 것을 알 수 있다.
  */
-namespace Example._04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_10
+namespace Example._04010203000201_M_2_Programming_0002.E01.Example.Classes.Runtime.Example_10
 {
 	/**
 	 * Example 10

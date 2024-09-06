@@ -20,7 +20,7 @@ using System.Threading.Tasks;
  * - 비트 연산자 (&, |, ^, ~, <<, >>)
  * - 기타 연산자 (., 형 변환 연산자, 조건 연산자, 우선 순위 연산자 등등...)
  */
-namespace Example._04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_03
+namespace Example._04010203000201_M_2_Programming_0002.E01.Example.Classes.Runtime.Example_03
 {
 	/**
 	 * Example 3

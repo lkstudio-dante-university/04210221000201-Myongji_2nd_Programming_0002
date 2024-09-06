@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Example._04010203000201_Myongji_2nd_Programming_0002.E01.Training.Classes.Runtime.Training_04
+namespace Example._04010203000201_M_2_Programming_0002.E01.Training.Classes.Runtime.Training_04
 {
 	/** 최상단 객체 */
 	internal class CT01Obj_04

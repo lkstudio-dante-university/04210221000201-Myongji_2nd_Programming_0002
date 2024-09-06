@@ -26,7 +26,7 @@ using System.Threading.Tasks;
  * - 구조체 및 클래스와 같은 자료형을 명시 할 수 있는 영역을 의미한다. (즉, 네임 스페이스를 활용하면 특정 기능과
  * 연관 된 자료형끼리 그룹을 지어서 관리하는 것이 가능하다.)
  */
-namespace Example._04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_01
+namespace Example._04010203000201_M_2_Programming_0002.E01.Example.Classes.Runtime.Example_01
 {
 	/**
 	 * Example 1

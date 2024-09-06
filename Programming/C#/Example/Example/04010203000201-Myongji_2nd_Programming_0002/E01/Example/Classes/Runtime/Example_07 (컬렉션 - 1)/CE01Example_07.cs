@@ -54,7 +54,7 @@ using System.Threading.Tasks;
  * - FIFO (First In First Out) 구조로 동작하는 컬렉션을 의미한다. (즉, 큐 또한 스택과 마찬가지로 특정 위치에
  * 존재하는 데이터에 자유롭게 접근하는 것이 불가능하다.)
  */
-namespace Example._04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_07
+namespace Example._04010203000201_M_2_Programming_0002.E01.Example.Classes.Runtime.Example_07
 {
 	/**
 	 * Example 7

@@ -72,7 +72,7 @@ using System.Threading.Tasks;
  * 위와 같이 Derived 클래스를 통해 생성 된 객체를 Base 형의 변수로 참조함으로서 Derived 객체를 Base 객체로 인지하는
  * 것이 가능하다.
  */
-namespace Example._04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_13
+namespace Example._04010203000201_M_2_Programming_0002.E01.Example.Classes.Runtime.Example_13
 {
 	/**
 	 * Example 13

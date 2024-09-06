@@ -62,7 +62,7 @@ using System.Threading.Tasks;
  * 메서드를 제어하는 것이 가능하다. (즉, Func 델리게이트 제네릭 형식 인자의 가장 마지막은 반환 형을 나타낸다는 것을
  * 알 수 있다.)
  */
-namespace Example._04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_17
+namespace Example._04010203000201_M_2_Programming_0002.E01.Example.Classes.Runtime.Example_17
 {
 	/**
 	 * Example 17

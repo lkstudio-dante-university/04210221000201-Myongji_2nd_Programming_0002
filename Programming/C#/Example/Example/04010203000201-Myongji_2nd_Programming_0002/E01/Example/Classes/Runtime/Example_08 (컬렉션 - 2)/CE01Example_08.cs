@@ -29,7 +29,7 @@ using System.Threading.Tasks;
  * 키는 딕셔너리가 관리하는 데이터를 탐색하기 위한 식별자의 역할을 하기 때문에 중복을 허용하지 않는다. 반면, 벨류는 
  * 실제 딕셔너리가 관리하는 데이터이기 때문에 중복이 가능하다는 차이점이 존재한다.
  */
-namespace Example._04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_08
+namespace Example._04010203000201_M_2_Programming_0002.E01.Example.Classes.Runtime.Example_08
 {
 	/*
 	 * Example 8

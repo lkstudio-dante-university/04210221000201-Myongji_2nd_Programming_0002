@@ -107,7 +107,7 @@ using System.Threading.Tasks;
  * int nValA = 0;		<- 첫 문자가 숫자가 아니기 때문에 컴파일 에러가 발생하지 않는다.
  * int 01nVal = 0;		<- 첫 문자가 숫자이기 때문에 컴파일 에러가 발생한다.
  */
-namespace Example._04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_02
+namespace Example._04010203000201_M_2_Programming_0002.E01.Example.Classes.Runtime.Example_02
 {
 	/**
 	 * Example 2

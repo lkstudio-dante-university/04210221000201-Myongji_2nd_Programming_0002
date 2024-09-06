@@ -76,7 +76,7 @@ using System.Threading.Tasks;
  * 위와 같이 열거형을 활용하면 간단하게 심볼릭 상수를 정의하는 것이 가능하다.
  * 또한, 열거형은 사용자 정의 자료형 중 하나이기 때문에 열거형을 자료형처럼 사용하는 것이 가능하다.
  */
-namespace Example._04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_15
+namespace Example._04010203000201_M_2_Programming_0002.E01.Example.Classes.Runtime.Example_15
 {
 	/**
 	 * Example 15

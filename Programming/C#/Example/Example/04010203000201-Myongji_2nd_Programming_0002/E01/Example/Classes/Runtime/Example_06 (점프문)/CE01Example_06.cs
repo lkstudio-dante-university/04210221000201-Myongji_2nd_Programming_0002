@@ -37,7 +37,7 @@ using System.Threading.Tasks;
  * - 제한 없이 프로그램의 흐름을 원하는 곳으로 이동시킬 수 있는 강력한 기능을 의미한다.
  * 단, goto 문을 남용 할 경우 프로그램의 흐름이 복잡해지기 때문에 가능하면 사용하지 않는 것을 추천한다.
  */
-namespace Example._04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_06
+namespace Example._04010203000201_M_2_Programming_0002.E01.Example.Classes.Runtime.Example_06
 {
 	/**
 	 * Example 6

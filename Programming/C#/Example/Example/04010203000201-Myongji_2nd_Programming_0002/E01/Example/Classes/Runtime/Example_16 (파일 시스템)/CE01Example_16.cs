@@ -30,7 +30,7 @@ using System.Threading.Tasks;
  * 스트림은 일반적으로 단방향이기 때문에 입/출력이 모두 필요 할 경우 스트림을 2 개 생성 할 필요가 있다. (즉, 입력용
  * 스트림 1 개와 출력용 스트림 1 개가 필요하다는 것을 알 수 있다.)
  */
-namespace Example._04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_16
+namespace Example._04010203000201_M_2_Programming_0002.E01.Example.Classes.Runtime.Example_16
 {
 	/**
 	 * Example 16

@@ -65,7 +65,7 @@ using System.Threading.Tasks;
  * 단, switch ~ case 조건문은 동등 비교만을 지원하기 때문에 C# 컴파일러에 의해서 최적화 될 여지가 있다는 장점이
  * 존재한다. (즉, switch ~ case 조건문은 특정 상황 일 경우 if ~ else 조건문보다 빠르게 동작한다는 것을 알 수 있다.)
  */
-namespace Example._04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_04
+namespace Example._04010203000201_M_2_Programming_0002.E01.Example.Classes.Runtime.Example_04
 {
 	/**
 	 * Example 4

@@ -40,7 +40,7 @@ using System.Threading.Tasks;
  * - 프로그램의 구조를 설계하기 위한 방법 중 하나로서 특정 역할을 수행하는 사물들을 정의하고 사물 간에 상호작용을
  * 통해 프로그램을 제작하는 것을 의미한다. (즉, 객체 지향 프로그래밍에서는 사물이 가장 핵심이 된다는 것을 알 수 있다.)
  */
-namespace Example._04010203000201_Myongji_2nd_Programming_0002.E01.Example.Classes.Runtime.Example_11
+namespace Example._04010203000201_M_2_Programming_0002.E01.Example.Classes.Runtime.Example_11
 {
 	/**
 	 * Example 11
