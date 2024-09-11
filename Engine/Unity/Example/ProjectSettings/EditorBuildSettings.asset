@@ -6,7 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/04010203000201-M_2_Programming_0002/E02/Example/Scenes/E02Example_00
+      (Menu).unity
+    guid: ea6775402cc04c64b8620a6813542301
+  - enabled: 1
     path: Assets/04010203000201-M_2_Programming_0002/E02/Example/Scenes/E02Example_01
       (Basic).unity
-    guid: e8d245dc9f5d6ea44983a1c8066e5415
-  m_configObjects: {}
+    guid: ad320bf4a3064594f93bbc18e1c5aa19
+  - enabled: 1
+    path: Assets/04010203000201-M_2_Programming_0002/E02/Example/Scenes/E02Example_02
+      (Light, Camera).unity
+    guid: 40332504aab41904597010bc26434e0c
+  - enabled: 1
+    path: Assets/04010203000201-M_2_Programming_0002/E02/Example/Scenes/E02Example_03
+      (Prefab, Script).unity
+    guid: e0fa2cd17747ddb4a8c75397b39cfc94
+  m_configObjects:
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 368115d1aa65eed4b940413859edc8f3, type: 2}
