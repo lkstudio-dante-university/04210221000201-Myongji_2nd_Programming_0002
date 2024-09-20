@@ -25,5 +25,11 @@ public partial class CComponent : MonoBehaviour
 	{
 		// Do Something
 	}
+
+	/** 상태를 갱신한다 */
+	public virtual void OnUpdate(float a_fTime_Delta)
+	{
+		// Do Something
+	}
 	#endregion // 함수
 }

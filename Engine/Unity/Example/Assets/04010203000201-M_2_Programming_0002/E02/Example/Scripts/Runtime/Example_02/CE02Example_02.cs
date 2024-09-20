@@ -91,7 +91,7 @@ using UnityEngine;
  * 
  * 카메라 클리어 옵션 종류
  * - Skybox
- * - Solid
+ * - Solid Color
  * - Depth Only
  * - Don't Clear
  * 
@@ -99,7 +99,7 @@ using UnityEngine;
  * - 카메라를 통해 장면을 화면 상에 출력하기 전에 렌더 타겟을 설정한 이미지로 지우는 옵션을 
  * 의미한다. (즉, Skybox 클리어 옵션을 활용하면 배경 이미지를 화면 상에 출력하는 것이 가능하다.)
  * 
- * Solid 클리어 옵션이란?
+ * Solid Color 클리어 옵션이란?
  * - 렌더 타겟을 설정한 색상으로 지우는 옵션을 의미한다. (즉, Solid 클리어 옵션을 활용하면 배경을
  * 특정 색상으로 채우는 것이 가능하다.)
  * 

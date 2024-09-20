@@ -38,6 +38,12 @@ public partial class CManager_Scene : CComponent
 	}
 
 	/** 상태를 갱신한다 */
+	public virtual void Update()
+	{
+		// Do Something
+	}
+
+	/** 상태를 갱신한다 */
 	public virtual void LateUpdate()
 	{
 		bool bIsDown_BackKey = Input.GetKeyDown(KeyCode.Escape);

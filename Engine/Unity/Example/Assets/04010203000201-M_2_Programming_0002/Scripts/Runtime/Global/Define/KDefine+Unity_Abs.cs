@@ -16,6 +16,7 @@ public static partial class KDefine
 	public const string G_N_SCENE_E02_EXAMPLE_00 = "E02Example_00 (Menu)";
 	public const string G_N_SCENE_E02_EXAMPLE_01 = "E02Example_01 (Basic)";
 	public const string G_N_SCENE_E02_EXAMPLE_02 = "E02Example_02 (Light, Camera)";
-	public const string G_N_SCENE_E02_EXAMPLE_03 = "E02Example_03 (Prefab, Script)";
+	public const string G_N_SCENE_E02_EXAMPLE_03 = "E02Example_03 (Prefab, Script - 1)";
+	public const string G_N_SCENE_E02_EXAMPLE_04 = "E02Example_04 (Prefab, Script - 2)";
 	#endregion // 컴파일 상수
 }
