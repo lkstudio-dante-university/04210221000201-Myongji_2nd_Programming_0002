@@ -12,6 +12,10 @@ public static partial class KDefine
 	public const float G_UNIT_SCALE = 0.01f;
 	public const float G_UNIT_PIXELS_PER_UNIT = 1.0f;
 
+	// 입력
+	public const string G_N_AXIS_VERTICAL = "Vertical";
+	public const string G_N_AXIS_HORIZONTAL = "Horizontal";
+
 	// 씬 이름
 	public const string G_N_SCENE_E02_EXAMPLE_00 = "E02Example_00 (Menu)";
 	public const string G_N_SCENE_E02_EXAMPLE_01 = "E02Example_01 (Basic)";

@@ -56,4 +56,12 @@ public partial class CManager_Scene : CComponent
 		}
 	}
 	#endregion // 클래스 함수
+
+	#region 제네릭 클래스 접근 함수
+	/** 씬 관리자를 반환한다 */
+	public static T GetManager_Scene<T>(string a_oName_Scene) where T : CManager_Scene
+	{
+		return CManager_Scene.DictManagers_Scene.ExGetVal(a_oName_Scene) as T;
+	}
+	#endregion // 제네릭 클래스 접근 함수
 }
