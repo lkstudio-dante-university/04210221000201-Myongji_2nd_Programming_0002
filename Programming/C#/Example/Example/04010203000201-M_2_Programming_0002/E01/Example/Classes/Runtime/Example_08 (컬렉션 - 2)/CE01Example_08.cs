@@ -43,7 +43,7 @@ namespace Example._04010203000201_M_2_Programming_0002.E01.Example.Classes.Runti
 			/*
 			 * Random 클래스란?
 			 * - 난수를 생성해주는 역할을 수행하는 클래스를 의미한다. (즉, Random 클래스를 활용하면 불규칙한 결과를
-			 * 만들어내는 프로그램을 제적하는 것이 가능하다.)
+			 * 만들어내는 프로그램을 제작하는 것이 가능하다.)
 			 */
 			Random oRandom = new Random();
 			HashSet<int> oSetValues = new HashSet<int>();
