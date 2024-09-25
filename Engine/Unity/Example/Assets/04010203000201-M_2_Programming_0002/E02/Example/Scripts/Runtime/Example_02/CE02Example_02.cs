@@ -116,7 +116,7 @@ namespace E02Example
 	/**
 	 * Example 2
 	 */
-	public class CE02Example_02 : CManager_Scene
+	public partial class CE02Example_02 : CManager_Scene
 	{
 		#region 함수
 		/** 초기화 */

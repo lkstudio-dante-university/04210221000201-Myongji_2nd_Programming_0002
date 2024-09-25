@@ -9,7 +9,7 @@ public static partial class Extension
 {
 	#region 제네릭 클래스 함수
 	/** 컴포넌트를 추가한다 */
-	public static T ExAddComponent<T>(this GameObject a_oSender, 
+	public static T ExAddComponent<T>(this GameObject a_oSender,
 		bool a_bIsUnique = true) where T : Component
 	{
 		/*

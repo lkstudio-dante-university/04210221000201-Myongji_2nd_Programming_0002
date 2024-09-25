@@ -7,7 +7,7 @@ namespace E02Example
 	/**
 	 * 플레이어
 	 */
-	public class CE02Player_04 : CComponent
+	public partial class CE02Player_04 : CComponent
 	{
 		#region 변수
 		[Header("=====> Player - Etc <=====")]
@@ -20,15 +20,30 @@ namespace E02Example
 		{
 			base.OnUpdate(a_fTime_Delta);
 
+			/*
+			 * Input.GetAxis 계열 메서드는 입력 장치의 축 정보를 가져오는 역할을 수행한다. (즉,
+			 * 해당 계열 메서드를 활용하면 게임 패드와 같이 조이 스틱이 존재하는 입력 장치를 제어
+			 * 할 수 있다는 것을 알 수 있다.)
+			 */
 			float fVertical = Input.GetAxis(KDefine.G_N_AXIS_VERTICAL);
 			float fHorizontal = Input.GetAxis(KDefine.G_N_AXIS_HORIZONTAL);
 
-			var stDirection = (Vector3.forward * fVertical) + (Vector3.right * fHorizontal);
+			var stDirection = (Vector3.forward * fVertical) +
+				(Vector3.right * fHorizontal);
 
 			stDirection = stDirection.magnitude.ExIsGreat(1.0f) ?
 				stDirection.normalized : stDirection;
 
-			this.transform.localPosition += stDirection * m_fSpeed * a_fTime_Delta;
+			var stPos = this.transform.localPosition;
+			stPos += stDirection * m_fSpeed * a_fTime_Delta;
+
+			stPos.x = Mathf.Clamp(stPos.x,
+				-KDefine.G_SIZE_WIDTH_SCREEN, KDefine.G_SIZE_WIDTH_SCREEN);
+
+			stPos.z = Mathf.Clamp(stPos.z,
+				-KDefine.G_SIZE_HEIGHT_SCREEN, KDefine.G_SIZE_HEIGHT_SCREEN);
+
+			this.transform.localPosition = stPos;
 		}
 		#endregion // 함수
 	}

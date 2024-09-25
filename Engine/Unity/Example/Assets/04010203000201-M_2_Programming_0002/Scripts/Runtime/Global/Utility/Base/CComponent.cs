@@ -20,6 +20,12 @@ public partial class CComponent : MonoBehaviour
 		// Do Something
 	}
 
+	/** 상태를 리셋한다 */
+	public virtual void Reset()
+	{
+		// Do Something
+	}
+
 	/** 제거되었을 경우 */
 	public virtual void OnDestroy()
 	{

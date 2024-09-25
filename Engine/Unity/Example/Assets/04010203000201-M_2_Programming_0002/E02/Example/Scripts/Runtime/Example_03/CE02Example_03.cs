@@ -1,5 +1,5 @@
-//#define E02_PREFAB_03
-#define E02_SCRIPT_03
+//#define E02_EXAMPLE_03_01
+#define E02_EXAMPLE_03_02
 
 using System.Collections;
 using System.Collections.Generic;
@@ -31,10 +31,10 @@ namespace E02Example
 	{
 		#region 변수
 		[Header("=====> Example 3 - Game Objects <=====")]
-		[SerializeField] private GameObject m_oPrefab_Targets = null;
-		[SerializeField] private GameObject m_oPrefab_OriginTarget = null;
+		[SerializeField] private GameObject m_oPrefab_Targets_01 = null;
+		[SerializeField] private GameObject m_oPrefab_OriginTarget_01 = null;
 
-		[SerializeField] private GameObject m_oGameObj_Target = null;
+		[SerializeField] private GameObject m_oGameObj_Target_02 = null;
 		#endregion // 변수
 
 		#region 함수
@@ -45,20 +45,18 @@ namespace E02Example
 		}
 
 		/** 상태를 갱신한다 */
-		public override void Update()
+		public void Update()
 		{
-			base.Update();
-
-#if E02_PREFAB_03
+#if E02_EXAMPLE_03_01
 			// 스페이스 키를 눌렀을 경우
 			if(Input.GetKeyDown(KeyCode.Space))
 			{
 				var oGameObj = Factory.CreateGameObj_Clone("Target",
-					m_oPrefab_OriginTarget, m_oPrefab_Targets);
+					m_oPrefab_OriginTarget_01, m_oPrefab_Targets_01);
 
-				oGameObj.transform.localScale = m_oPrefab_OriginTarget.transform.localScale;
+				oGameObj.transform.localScale = m_oPrefab_OriginTarget_01.transform.localScale;
 			}
-#elif E02_SCRIPT_03
+#elif E02_EXAMPLE_03_02
 			// 상 / 하 키를 눌렀을 경우
 			if(Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow))
 			{
@@ -73,7 +71,7 @@ namespace E02Example
 				 * 특징이 존재한다. (즉, 비율을 고려하지 않고 이동 간격을 명시해야한다는 것을
 				 * 알 수 있다.)
 				 */
-				m_oGameObj_Target.transform.Translate(0.0f, 
+				m_oGameObj_Target_02.transform.Translate(0.0f,
 					0.0f, 5.0f * fSign * Time.deltaTime, Space.Self);
 			}
 
@@ -91,11 +89,43 @@ namespace E02Example
 				 * 입력 데이터를 요구한다. (즉, 상황에 따라 게임 객체를 회전하기 위한 명령문을
 				 * 작성하는 것이 가능하다.)
 				 */
-				m_oGameObj_Target.transform.Rotate(0.0f, 
+				m_oGameObj_Target_02.transform.Rotate(0.0f,
 					180.0f * fSign * Time.deltaTime, 0.0f, Space.Self);
 			}
-#endif // E02_PREFAB_03
+#endif // E02_EXAMPLE_03_01
 		}
+
+#if E02_EXAMPLE_03_02
+		/*
+		 * OnDrawGizmos 메서드는 씬 뷰에 그래픽을 출력하는 역할을 수행한다. (즉, 해당 메서드를
+		 * 활용하면 씬 뷰에 여러 정보를 출력함으로서 프로그램 제작을 좀 더 수월하게 진행하는 것이
+		 * 가능하다.)
+		 */
+		/** 기즈모를 그린다 */
+		public void OnDrawGizmos()
+		{
+			var stColor_Prev = Gizmos.color;
+
+			try
+			{
+				var stStart = m_oGameObj_Target_02.transform.position;
+				var stEnd = stStart + (m_oGameObj_Target_02.transform.forward * 5.0f);
+
+				Gizmos.color = Color.red;
+				Gizmos.DrawLine(stStart, stEnd);
+			}
+			finally
+			{
+				/*
+				 * Gizmos 클래스는 전역적으로 사용되는 클래스이기 떄문에 해당 클래스의 특정 속성을
+				 * 변경했다면 반드시 다시 원래대로 돌려놓을 필요가 있다. (즉, 해당 클래스의 속성을
+				 * 변경함으로서 다른 스크립트에 존재하는 OnDrawGizmos 메서드에서 원치 않는 결과가
+				 * 출력 될 수 있다는 것을 의미한다.)
+				 */
+				Gizmos.color = stColor_Prev;
+			}
+		}
+#endif // #if E02_EXAMPLE_03_02
 		#endregion // 함수
 	}
 }

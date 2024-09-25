@@ -7,7 +7,7 @@ namespace E01Example
 	/**
 	 * Example 1
 	 */
-	public class CE01Example_01 : MonoBehaviour
+	public partial class CE01Example_01 : MonoBehaviour
 	{
 		#region 변수
 		[Header("=====> Example - Game Objects <=====")]

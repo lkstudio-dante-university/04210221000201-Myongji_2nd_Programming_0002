@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - E02Tag_SafeArea
+  - E02Tag_Obstacle
   layers:
   - Default
   - TransparentFX

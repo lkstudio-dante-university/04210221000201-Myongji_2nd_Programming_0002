@@ -7,7 +7,7 @@ namespace E01Example
 	/**
 	 * Example 2
 	 */
-	public class CE01Example_02 : MonoBehaviour
+	public partial class CE01Example_02 : MonoBehaviour
 	{
 		#region 변수
 		[Header("=====> Example - Etc <=====")]
@@ -43,7 +43,7 @@ namespace E01Example
 			// 마우스 버튼을 눌렀을 경우
 			if(Input.GetMouseButton(1))
 			{
-				m_oPlayer.transform.Rotate(Vector3.up, 
+				m_oPlayer.transform.Rotate(Vector3.up,
 					fMouseX * m_fSpeedPlayerRotate * Time.deltaTime, Space.World);
 			}
 

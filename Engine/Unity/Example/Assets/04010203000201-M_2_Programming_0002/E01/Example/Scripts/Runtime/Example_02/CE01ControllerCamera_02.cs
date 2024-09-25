@@ -7,7 +7,7 @@ namespace E01Example
 	/**
 	 * 카메라 제어자
 	 */
-	public class CE01Controller_Camera : MonoBehaviour
+	public partial class CE01Controller_Camera : MonoBehaviour
 	{
 		#region 변수
 		[Header("=====> Controller Camera - Etc <=====")]
@@ -31,7 +31,7 @@ namespace E01Example
 		/** 상태를 갱신한다 */
 		public void LateUpdate()
 		{
-			var stPos = m_oFollowTarget.transform.position + 
+			var stPos = m_oFollowTarget.transform.position +
 				(m_oFollowTarget.transform.forward * -m_fDistance);
 
 			m_oCameraMain.transform.position = stPos + (Vector3.up * m_fHeight);

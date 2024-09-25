@@ -12,7 +12,7 @@ namespace E02Example
 	/**
 	 * 메뉴
 	 */
-	public class CE02Example_00 : CManager_Scene
+	public partial class CE02Example_00 : CManager_Scene
 	{
 		#region 변수
 		[Header("=====> Menu - Game Objects <=====")]
@@ -41,7 +41,7 @@ namespace E02Example
 					m_oPrefab_Text, m_oGameObj_ScrollViewContents);
 
 				oText.text = oName_Scene;
-				
+
 				int nIdx = i;
 				var oBtn = oText.GetComponentInChildren<Button>();
 
