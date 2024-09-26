@@ -39,7 +39,7 @@ public partial class CManager_Scene : CComponent
 		CManager_Scene.DictManagers_Scene.ExAddVal(this.gameObject.scene.name, this);
 
 		Time.fixedDeltaTime = KDefine.G_TIME_FIXED_DELTA;
-		Application.targetFrameRate = KDefine.G_RATE_FRAME_TARGET;
+		Application.targetFrameRate = KDefine.G_RATE_FRAME_DEF_TARGET;
 		Physics.gravity = KDefine.G_UNIT_GRAVITY;
 
 		/*

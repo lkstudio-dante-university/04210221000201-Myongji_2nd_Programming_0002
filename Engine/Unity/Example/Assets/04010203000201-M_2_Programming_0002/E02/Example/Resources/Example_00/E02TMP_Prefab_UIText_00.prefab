@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9201299653175615817}
   - component: {fileID: 1540879372238679418}
   m_Layer: 0
-  m_Name: E02Prefab_UIText_00
+  m_Name: E02TMP_Prefab_UIText_00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -9,7 +9,8 @@ public static partial class KDefine
 {
 	#region 컴파일 상수
 	// 기타 {
-	public const int G_RATE_FRAME_TARGET = 60;
+	public const int G_RATE_FRAME_DEF_TARGET = 60;
+	public const int G_RATE_FRAME_MIN_TARGET = 30;
 
 	public const float G_UNIT_SCALE = 0.01f;
 	public const float G_TIME_FIXED_DELTA = 1.0f / 60.0f;

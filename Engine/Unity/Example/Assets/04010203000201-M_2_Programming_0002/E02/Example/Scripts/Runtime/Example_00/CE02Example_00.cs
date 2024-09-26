@@ -16,8 +16,8 @@ namespace E02Example
 	{
 		#region 변수
 		[Header("=====> Menu - Game Objects <=====")]
-		[SerializeField] private GameObject m_oPrefab_Text = null;
-		[SerializeField] private GameObject m_oGameObj_ScrollViewContents = null;
+		[SerializeField] private GameObject m_oTMP_Prefab_UIText = null;
+		[SerializeField] private GameObject m_oGameObj_UIContents_ScrollView = null;
 		#endregion // 변수
 
 		#region 함수
@@ -38,7 +38,7 @@ namespace E02Example
 				string oName_Scene = Path.GetFileNameWithoutExtension(oPath_Scene);
 
 				var oText = Factory.CreateGameObj_Clone<TMP_Text>(string.Format("Text_{0:00}", i),
-					m_oPrefab_Text, m_oGameObj_ScrollViewContents);
+					m_oTMP_Prefab_UIText, m_oGameObj_UIContents_ScrollView);
 
 				oText.text = oName_Scene;
 

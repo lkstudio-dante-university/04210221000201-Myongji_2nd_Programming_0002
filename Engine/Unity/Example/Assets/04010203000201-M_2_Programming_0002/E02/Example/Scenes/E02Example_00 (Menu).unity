@@ -762,7 +762,7 @@ GameObject:
   - component: {fileID: 1113514623}
   - component: {fileID: 1113514622}
   m_Layer: 0
-  m_Name: View_Scroll
+  m_Name: UIView_Scroll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -937,8 +937,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bffb62d5f87b10845aa9f470071ff274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oPrefab_Text: {fileID: 6737857326179632811, guid: ec262ac24db42684c990641a8ed3a63f, type: 3}
-  m_oGameObj_ScrollViewContents: {fileID: 1964153514}
+  m_oTMP_Prefab_UIText: {fileID: 6737857326179632811, guid: ec262ac24db42684c990641a8ed3a63f, type: 3}
+  m_oGameObj_UIContents_ScrollView: {fileID: 1964153514}
 --- !u!1 &1499044677
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,7 +985,7 @@ GameObject:
   - component: {fileID: 1536747410}
   - component: {fileID: 1536747409}
   m_Layer: 0
-  m_Name: Scrollbar_Vertical
+  m_Name: UIScrollbar_Vertical
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
