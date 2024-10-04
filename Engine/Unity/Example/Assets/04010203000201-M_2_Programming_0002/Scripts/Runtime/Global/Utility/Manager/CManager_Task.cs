@@ -7,9 +7,7 @@ using UnityEngine;
  */
 public partial class CManager_Task : CSingleton<CManager_Task>
 {
-	#region 변수
-	private WaitForEndOfFrame m_oWait_EndOfFrame = new WaitForEndOfFrame();
-	#endregion // 변수
+	// Do Something
 }
 
 /**
@@ -22,13 +20,15 @@ public partial class CManager_Task : CSingleton<CManager_Task>
 	public IEnumerator CoWaitOperation_Async(AsyncOperation a_oOperation_Async,
 		System.Action<AsyncOperation, bool> a_oCallback)
 	{
+		var oWait_EndOfFrame = new WaitForEndOfFrame();
+
 		do
 		{
-			yield return m_oWait_EndOfFrame;
+			yield return oWait_EndOfFrame;
 			a_oCallback?.Invoke(a_oOperation_Async, false);
 		} while(!a_oOperation_Async.isDone);
 
-		yield return m_oWait_EndOfFrame;
+		yield return oWait_EndOfFrame;
 		a_oCallback?.Invoke(a_oOperation_Async, true);
 	}
 	#endregion // 함수

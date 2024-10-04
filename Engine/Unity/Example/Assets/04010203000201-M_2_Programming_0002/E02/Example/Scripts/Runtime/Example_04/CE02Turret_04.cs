@@ -10,11 +10,12 @@ namespace E02Example
 	public partial class CE02Turret_04 : CComponent
 	{
 		#region 변수
-		[Header("=====> Turret - Etc <=====")]
-		private WaitForSeconds m_oWait_Seconds = null;
-
 		[Header("=====> Turret - Game Objects <=====")]
 		[SerializeField] private GameObject m_oPrefab_OriginBullet = null;
+
+#if P02_PRACTICE_01
+		[SerializeField] private List<GameObject> m_oListPrefabs_OriginBullet = new List<GameObject>();
+#endif // #if P02_PRACTICE_01
 		#endregion // 변수
 
 		#region 함수
@@ -52,20 +53,33 @@ namespace E02Example
 		public IEnumerator CoTryShootBullet()
 		{
 			float fInterval = Random.Range(1.0f, 3.0f);
-			m_oWait_Seconds = new WaitForSeconds(fInterval);
+			var oWait_Seconds = new WaitForSeconds(fInterval);
 
 			var oManager_Scene = CManager_Scene.GetManager_Scene<CE02Example_04>(KDefine.G_N_SCENE_E02_EXAMPLE_04);
 
 			do
 			{
+#if P02_PRACTICE_01
+				int nType_Min = (int)CE02Bullet_04.EType.GREEN;
+				int nType_Max = (int)CE02Bullet_04.EType.MAX_VAL;
+
+				var eType_Bullet = (CE02Bullet_04.EType)Random.Range(nType_Min, nType_Max);
+				var oPrefab_OriginBullet = m_oListPrefabs_OriginBullet[(int)eType_Bullet];
+
+				var oBullet = Factory.CreateGameObj_Clone<CE02Bullet_04>("Bullet",
+					oPrefab_OriginBullet, oManager_Scene.GameObj_Bullets, false);
+
+				oBullet.Init(eType_Bullet);
+#else
 				var oBullet = Factory.CreateGameObj_Clone<CE02Bullet_04>("Bullet",
 					m_oPrefab_OriginBullet, oManager_Scene.GameObj_Bullets, false);
+#endif // #if P02_PRACTICE_01
 
 				oBullet.transform.position = this.transform.position;
 				oBullet.Shoot(oManager_Scene.Player.gameObject);
 
 				oManager_Scene.ListBullets.ExAddVal(oBullet);
-				yield return m_oWait_Seconds;
+				yield return oWait_Seconds;
 			} while(oManager_Scene.State_Cur != CE02Example_04.EState.GAME_OVER);
 		}
 		#endregion // 함수

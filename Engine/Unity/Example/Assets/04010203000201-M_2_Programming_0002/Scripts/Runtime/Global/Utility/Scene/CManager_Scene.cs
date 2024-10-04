@@ -17,6 +17,7 @@ public partial class CManager_Scene : CComponent
 
 	public Canvas UIsCanvas { get; private set; } = null;
 	public EventSystem UIsEventSystem { get; private set; } = null;
+	public BaseInputModule UIsBaseInputModule { get; private set; } = null;
 
 	public GameObject UIs { get; private set; } = null;
 	public GameObject UIsPopup { get; private set; } = null;
@@ -68,6 +69,7 @@ public partial class CManager_Scene : CComponent
 
 			this.UIsCanvas = this.UIsCanvas ?? oTrans_UIsCanvas?.GetComponent<Canvas>();
 			this.UIsEventSystem = this.UIsEventSystem ?? oTrans_UIsEventSystem?.GetComponent<EventSystem>();
+			this.UIsBaseInputModule = this.UIsBaseInputModule ?? oTrans_UIsEventSystem?.GetComponent<BaseInputModule>();
 
 			this.UIs = this.UIs ?? oTrans_UIs?.gameObject;
 			this.UIsPopup = this.UIsPopup ?? oTrans_UIsPopup?.gameObject;
@@ -76,17 +78,42 @@ public partial class CManager_Scene : CComponent
 			this.Objects_Static = this.Objects_Static ?? oTrans_StaticObjects?.gameObject;
 		}
 
-		this.Light_Main?.gameObject.SetActive(this.IsScene_Active);
-		this.Camera_Main?.gameObject.SetActive(this.IsScene_Active);
-		this.UIsEventSystem?.gameObject.SetActive(this.IsScene_Active);
-
+		this.SetupComponents_Unique();
 		var oURP_CameraData_Main = this.Camera_Main?.GetUniversalAdditionalCameraData();
 
 		// URP 카메라 데이터가 존재 할 경우
 		if(oURP_CameraData_Main != null)
 		{
-			oURP_CameraData_Main.renderType = this.IsScene_Active ?
-				CameraRenderType.Base : CameraRenderType.Overlay;
+			oURP_CameraData_Main.renderType = CameraRenderType.Base;
+		}
+	}
+
+	/** 초기화 */
+	public override void Start()
+	{
+		base.Start();
+		Time.timeScale = this.IsScene_Active ? 1.0f : Time.timeScale;
+
+		this.Light_Main?.gameObject.SetActive(this.IsScene_Active);
+		this.Camera_Main?.gameObject.SetActive(this.IsScene_Active);
+		this.UIsEventSystem?.gameObject.SetActive(this.IsScene_Active);
+
+		// 광원이 존재 할 경우
+		if(this.Light_Main != null)
+		{
+			this.Light_Main.renderMode = LightRenderMode.ForcePixel;
+		}
+
+		// 이벤트 시스템이 존재 할 경우
+		if(this.UIsEventSystem != null)
+		{
+			this.UIsEventSystem.enabled = this.IsScene_Active;
+		}
+
+		// 입력 모듈이 존재 할 경우
+		if(this.UIsBaseInputModule != null)
+		{
+			this.UIsBaseInputModule.enabled = this.IsScene_Active;
 		}
 	}
 
@@ -95,6 +122,12 @@ public partial class CManager_Scene : CComponent
 	{
 		base.OnDestroy();
 		CManager_Scene.DictManagers_Scene.ExRemoveVal(this.gameObject.scene.name);
+	}
+
+	/** 상태를 갱신한다 */
+	public virtual void Update()
+	{
+		// Do Something
 	}
 
 	/** 상태를 갱신한다 */
@@ -107,6 +140,54 @@ public partial class CManager_Scene : CComponent
 		if(bIsDown_BackKey)
 		{
 			CLoader_Scene.Inst.LoadScene(KDefine.G_N_SCENE_E02_EXAMPLE_00);
+		}
+	}
+
+	/** 고유 컴포넌트를 설정한다 */
+	protected virtual void SetupComponents_Unique()
+	{
+		var oGameObjects = this.gameObject.scene.GetRootGameObjects();
+
+		for(int i = 0; i < oGameObjects.Length; ++i)
+		{
+			var oLights = oGameObjects[i].GetComponentsInChildren<Light>(true);
+			var oCameras = oGameObjects[i].GetComponentsInChildren<Camera>(true);
+			var oEventSystems = oGameObjects[i].GetComponentsInChildren<EventSystem>(true);
+			var oAudioListeners = oGameObjects[i].GetComponentsInChildren<AudioListener>(true);
+			var oBaseInputModules = oGameObjects[i].GetComponentsInChildren<BaseInputModule>(true);
+
+			for(int j = 0; j < oLights.Length; ++j)
+			{
+				oLights[j].renderMode = LightRenderMode.Auto;
+			}
+
+			for(int j = 0; j < oCameras.Length; ++j)
+			{
+				var oURP_CameraData = oCameras[j].GetUniversalAdditionalCameraData();
+
+				// URP 카메라 데이터가 없을 경우
+				if(oURP_CameraData == null)
+				{
+					continue;
+				}
+
+				oURP_CameraData.renderType = CameraRenderType.Overlay;
+			}
+
+			for(int j = 0; j < oEventSystems.Length; ++j)
+			{
+				oEventSystems[j].enabled = false;
+			}
+
+			for(int j = 0; j < oAudioListeners.Length; ++j)
+			{
+				oAudioListeners[j].enabled = false;
+			}
+
+			for(int j = 0; j < oBaseInputModules.Length; ++j)
+			{
+				oBaseInputModules[j].enabled = false;
+			}
 		}
 	}
 	#endregion // 클래스 함수

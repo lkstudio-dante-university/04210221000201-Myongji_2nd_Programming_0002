@@ -13,7 +13,7 @@ public partial class CLoader_Scene : CSingleton<CLoader_Scene>
 	/** 씬을 로드한다 */
 	public void LoadScene(string a_oName_Scene, bool a_bIsSingle = true)
 	{
-		SceneManager.LoadScene(a_oName_Scene, 
+		SceneManager.LoadScene(a_oName_Scene,
 			a_bIsSingle ? LoadSceneMode.Single : LoadSceneMode.Additive);
 	}
 
@@ -21,7 +21,7 @@ public partial class CLoader_Scene : CSingleton<CLoader_Scene>
 	public void LoadScene_Async(string a_oName_Scene,
 		float a_fDelay, System.Action<AsyncOperation, bool> a_oCallback, bool a_bIsSingle = true)
 	{
-		StartCoroutine(this.CoLoadScene_Async(a_oName_Scene, 
+		StartCoroutine(this.CoLoadScene_Async(a_oName_Scene,
 			a_fDelay, a_oCallback, a_bIsSingle));
 	}
 

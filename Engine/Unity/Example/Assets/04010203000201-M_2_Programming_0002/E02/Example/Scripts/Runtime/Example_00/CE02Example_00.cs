@@ -57,12 +57,12 @@ namespace E02Example
 				 * 활용하면 Unity 에디터가 아닌 스크립트에서 동적으로 이벤트 처리 메서드를 설정 할
 				 * 수 있다.)
 				 */
-				oBtn?.onClick.AddListener(() => this.OnTouchBtn(nIdx));
+				oBtn?.onClick.AddListener(() => this.OnTouchUIBtn(nIdx));
 			}
 		}
 
 		/** 버튼을 눌렀을 경우 */
-		private void OnTouchBtn(int a_nIdx)
+		private void OnTouchUIBtn(int a_nIdx)
 		{
 			string oPath_Scene = SceneUtility.GetScenePathByBuildIndex(a_nIdx);
 			CLoader_Scene.Inst.LoadScene(oPath_Scene);

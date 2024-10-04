@@ -26,7 +26,7 @@ namespace E02Example
 		[Header("=====> Example 4 - Etc <=====")]
 		[SerializeField] private CE02Player_04 m_oPlayer = null;
 
-		private float m_fTime_Skip = 0.0f;
+		private float m_fTime_Play = 0.0f;
 		private Collider[] m_oColliders = new Collider[sbyte.MaxValue];
 
 		[Header("=====> Example 4 - UIs <=====")]
@@ -60,16 +60,18 @@ namespace E02Example
 		}
 
 		/** 상태를 갱신한다 */
-		public void Update()
+		public override void Update()
 		{
+			base.Update();
+
 			// 상태 갱신이 불가능 할 경우
 			if(this.State_Cur != EState.PLAY)
 			{
 				return;
 			}
 
-			m_fTime_Skip += Time.deltaTime;
-			m_oTMP_UIText_Time.text = $"{m_fTime_Skip:0.00}";
+			m_fTime_Play += Time.deltaTime;
+			m_oTMP_UIText_Time.text = $"{m_fTime_Play:0.00}";
 
 			m_oPlayer.OnUpdate(Time.deltaTime);
 

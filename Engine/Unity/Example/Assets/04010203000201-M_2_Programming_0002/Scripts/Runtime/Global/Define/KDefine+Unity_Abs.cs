@@ -34,6 +34,10 @@ public static partial class KDefine
 	public const string G_N_SCENE_E02_EXAMPLE_06 = "E02Example_06 (Flappy Bird - Start)";
 	public const string G_N_SCENE_E02_EXAMPLE_07 = "E02Example_07 (Flappy Bird - Play)";
 	public const string G_N_SCENE_E02_EXAMPLE_08 = "E02Example_08 (Flappy Bird - Result)";
+	public const string G_N_SCENE_E02_EXAMPLE_09 = "E02Example_09 (Sprite, Animation)";
+	public const string G_N_SCENE_E02_EXAMPLE_10 = "E02Example_10 (Moly Moly - Start)";
+	public const string G_N_SCENE_E02_EXAMPLE_11 = "E02Example_11 (Moly Moly - Play)";
+	public const string G_N_SCENE_E02_EXAMPLE_12 = "E02Example_12 (Moly Moly - Result)";
 
 	// 씬 관리자 {
 	public const string G_P_GAME_OBJ_LIGHT_MAIN = "Light_Main";

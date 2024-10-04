@@ -25,7 +25,7 @@ using UnityEngine.UI;
  * 아직 무리가 있으며 해당 물리 엔진을 사용하기 위해서는 ECS (Entity Component System) 와 
  * DOTS (Data Oriented Technology Stack) 기반으로 프로그램을 제작 할 필요가 있다.
  * 
- * Unity 물리 관련 컴포넌트
+ * Unity 물리 관련 컴포넌트 종류
  * - 강체 (Rigidbody)
  * - 충돌체 (Collider)
  * 
@@ -92,8 +92,10 @@ namespace E02Example
 		}
 
 		/** 상태를 갱신한다 */
-		public void Update()
+		public override void Update()
 		{
+			base.Update();
+
 #if E02_EXAMPLE_05_01
 			// 상 / 하 키를 눌렀을 경우
 			if(Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow))

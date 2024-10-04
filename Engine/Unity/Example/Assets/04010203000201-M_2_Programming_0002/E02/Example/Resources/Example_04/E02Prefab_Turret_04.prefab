@@ -153,3 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_oPrefab_OriginBullet: {fileID: 3916128771702412374, guid: ed6c4338037ccc64cb379e6e56cc51ac, type: 3}
+  m_oListPrefabs_OriginBullet:
+  - {fileID: 3916128771702412374, guid: ed6c4338037ccc64cb379e6e56cc51ac, type: 3}
+  - {fileID: 3916128771702412374, guid: 108a0e4436d7f2a428b0666c6c8ef9b1, type: 3}
+  - {fileID: 3916128771702412374, guid: faef19dae6d1edf46b22a081a9f7a475, type: 3}

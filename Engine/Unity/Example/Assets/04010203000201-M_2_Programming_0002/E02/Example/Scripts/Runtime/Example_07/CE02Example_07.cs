@@ -23,9 +23,6 @@ namespace E02Example
 		}
 
 		#region 변수
-		[Header("=====> Example 7 - Etc <=====")]
-		private WaitForSeconds m_oWait_Seconds = new WaitForSeconds(2.0f);
-
 		[Header("=====> Example 7 - UIs <=====")]
 		[SerializeField] private TMP_Text m_oTMP_UIText_Score = null;
 
@@ -56,7 +53,7 @@ namespace E02Example
 			 * 역할을 수행한다. (즉, 해당 프로퍼티를 통해 고정 된 속성은 물리 엔진에 의해서
 			 * 시뮬레이션 되지 않는다는 것을 알 수 있다.)
 			 */
-			oRigidbody.constraints = RigidbodyConstraints.FreezePositionX | 
+			oRigidbody.constraints = RigidbodyConstraints.FreezePositionX |
 				RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
 
 			var oDispatcher_Trigger = m_oGameObj_Player.GetComponent<CDispatcher_Trigger>();
@@ -72,8 +69,10 @@ namespace E02Example
 		}
 
 		/** 상태를 갱신한다 */
-		public void Update()
+		public override void Update()
 		{
+			base.Update();
+
 			// 상태 갱신이 불가능 할 경우
 			if(this.State_Cur != EState.PLAY)
 			{
@@ -99,7 +98,7 @@ namespace E02Example
 		}
 
 		/** 충돌 시작을 처리한다 */
-		private void HandleOnTrigger_Begin(CDispatcher_Trigger a_oSender, 
+		private void HandleOnTrigger_Begin(CDispatcher_Trigger a_oSender,
 			Collider a_oCollider)
 		{
 			// 장애물이 아닐 경우
@@ -142,6 +141,8 @@ namespace E02Example
 		/** 장애물을 생성한다 */
 		private IEnumerator CoTryCreateObstacles()
 		{
+			var oWait_Seconds = new WaitForSeconds(2.0f);
+
 			do
 			{
 				var oObstacle = Factory.CreateGameObj_Clone("Obstacle",
@@ -151,7 +152,7 @@ namespace E02Example
 					0.0f, 0.0f);
 
 				this.ListObstacles.ExAddVal(oObstacle);
-				yield return m_oWait_Seconds;
+				yield return oWait_Seconds;
 			} while(this.State_Cur != EState.GAME_OVER);
 		}
 		#endregion // 함수

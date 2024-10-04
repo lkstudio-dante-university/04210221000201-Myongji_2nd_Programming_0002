@@ -45,8 +45,10 @@ namespace E02Example
 		}
 
 		/** 상태를 갱신한다 */
-		public void Update()
+		public override void Update()
 		{
+			base.Update();
+
 #if E02_EXAMPLE_03_01
 			// 스페이스 키를 눌렀을 경우
 			if(Input.GetKeyDown(KeyCode.Space))
