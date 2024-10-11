@@ -57,6 +57,11 @@ namespace E02Example
 		{
 			this.IsOpen = false;
 
+			/*
+			 * Animator.Set 계열 메서드를 활용하면 특정 매개 변수에 값을 설정하는 것이 가능하다.
+			 * (즉, 애니메이터 컴포넌트는 현재 설정 된 매개 변수를 가져오거나 변경 할 수 있는
+			 * 접근자 메서드를 지원한다는 것을 알 수 있다.)
+			 */
 			m_oAnimator.SetTrigger("Catch");
 			m_oAnimator.ResetTrigger("Open");
 		}

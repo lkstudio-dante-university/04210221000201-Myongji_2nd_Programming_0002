@@ -106,6 +106,9 @@ namespace E02Example
 
 #if E01_EXAMPLE_09_02
 			m_oAnimator_Target_02 = m_oSprite_Target_02.GetComponent<Animator>();
+
+			var oDispatcher_Trigger = m_oSprite_Target_02.GetComponent<CDispatcher_Trigger>();
+			oDispatcher_Trigger.SetCallback_Begin(this.HandleOnTrigger_Begin);
 #endif // #if E01_EXAMPLE_09_02
 		}
 
@@ -150,6 +153,15 @@ namespace E02Example
 			}
 #endif // E01_EXAMPLE_09_01
 		}
+
+#if E01_EXAMPLE_09_02
+		/** 충돌 시작을 처리한다 */
+		private void HandleOnTrigger_Begin(CDispatcher_Trigger a_oSender, 
+			Collider a_oCollider)
+		{
+			Func.ShowLog($"{a_oCollider.name} 와 충돌했습니다.");
+		}
+#endif // #if E01_EXAMPLE_09_02
 		#endregion // 함수
 	}
 }

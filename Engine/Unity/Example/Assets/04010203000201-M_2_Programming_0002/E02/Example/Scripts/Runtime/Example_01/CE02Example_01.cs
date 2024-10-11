@@ -106,14 +106,7 @@ namespace E02Example
 		public override void Awake()
 		{
 			base.Awake();
-
-			/*
-			 * Debug 클래스란?
-			 * - 디버깅을 하기 위한 여러 기능을 제공하는 클래스를 의미한다. (즉, 해당 클래스를
-			 * 활용하면 프로그램을 제작하면서 발생하는 여러 문제를 해결하기 위한 힌트 등을 얻는
-			 * 것이 가능하다.)
-			 */
-			Debug.Log("Hello, World!");
+			Func.ShowLog("Hello, World!");
 		}
 		#endregion // 함수
 	}

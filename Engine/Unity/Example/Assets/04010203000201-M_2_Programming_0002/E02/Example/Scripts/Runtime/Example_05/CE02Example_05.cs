@@ -126,7 +126,7 @@ namespace E02Example
 			// 충돌했을 경우
 			if(Physics.Raycast(stRay, out RaycastHit stRaycastHit, 5.0f))
 			{
-				Debug.Log($"{stRaycastHit.collider.name} 충돌");
+				Func.ShowLog($"{stRaycastHit.collider.name} 충돌");
 			}
 #elif E02_EXAMPLE_05_02
 			// 발사가 불가능 할 경우
