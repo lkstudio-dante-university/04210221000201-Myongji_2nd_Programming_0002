@@ -57,5 +57,9 @@ EditorBuildSettings:
     path: Assets/04010203000201-M_2_Programming_0002/E02/Example/Scenes/E02Example_12
       (Moly Moly - Result).unity
     guid: 137288f8a3a75374189b6f1713ac575b
+  - enabled: 1
+    path: Assets/04010203000201-M_2_Programming_0002/E02/Example/Scenes/E02Example_13
+      (GUI).unity
+    guid: 8ff95a4839dc98e44aa267bdd8a83da3
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 368115d1aa65eed4b940413859edc8f3, type: 2}

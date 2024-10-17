@@ -1,5 +1,5 @@
-//#define E02_EXAMPLE_03_01
-#define E02_EXAMPLE_03_02
+//#define E_EXAMPLE_E02_EXAMPLE_03_01
+#define E_EXAMPLE_E02_EXAMPLE_03_02
 
 using System.Collections;
 using System.Collections.Generic;
@@ -49,7 +49,7 @@ namespace E02Example
 		{
 			base.Update();
 
-#if E02_EXAMPLE_03_01
+#if E_EXAMPLE_E02_EXAMPLE_03_01
 			// 스페이스 키를 눌렀을 경우
 			if(Input.GetKeyDown(KeyCode.Space))
 			{
@@ -58,7 +58,7 @@ namespace E02Example
 
 				oGameObj.transform.localScale = m_oPrefab_OriginTarget_01.transform.localScale;
 			}
-#elif E02_EXAMPLE_03_02
+#elif E_EXAMPLE_E02_EXAMPLE_03_02
 			// 상 / 하 키를 눌렀을 경우
 			if(Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow))
 			{
@@ -94,10 +94,10 @@ namespace E02Example
 				m_oGameObj_Target_02.transform.Rotate(0.0f,
 					180.0f * fSign * Time.deltaTime, 0.0f, Space.Self);
 			}
-#endif // E02_EXAMPLE_03_01
+#endif // E_EXAMPLE_E02_EXAMPLE_03_01
 		}
 
-#if E02_EXAMPLE_03_02
+#if E_EXAMPLE_E02_EXAMPLE_03_02
 		/*
 		 * OnDrawGizmos 메서드는 씬 뷰에 그래픽을 출력하는 역할을 수행한다. (즉, 해당 메서드를
 		 * 활용하면 씬 뷰에 여러 정보를 출력함으로서 프로그램 제작을 좀 더 수월하게 진행하는 것이
@@ -127,7 +127,7 @@ namespace E02Example
 				Gizmos.color = stColor_Prev;
 			}
 		}
-#endif // #if E02_EXAMPLE_03_02
+#endif // #if E_EXAMPLE_E02_EXAMPLE_03_02
 		#endregion // 함수
 	}
 }

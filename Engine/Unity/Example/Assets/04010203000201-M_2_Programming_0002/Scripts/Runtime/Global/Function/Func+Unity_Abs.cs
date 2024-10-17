@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using System.Diagnostics;
+using UnityEngine.SceneManagement;
 
 /**
  * 함수
@@ -33,6 +34,29 @@ public static partial class Func
 		 * 것이 가능하다.)
 		 */
 		UnityEngine.Debug.LogFormat(a_oFmt, a_oParams);
+	}
+
+	/** 씬을 순회한다 */
+	public static void EnumerateScenes(System.Action<Scene> a_oCallback)
+	{
+		for(int i = 0; i < SceneManager.sceneCount; ++i)
+		{
+			a_oCallback?.Invoke(SceneManager.GetSceneAt(i));
+		}
+	}
+
+	/** 최상단 게임 객체를 순회한다 */
+	public static void EnumerateGameObjects_Root(System.Action<GameObject> a_oCallback)
+	{
+		Func.EnumerateScenes((a_stScene) =>
+		{
+			var oGameObjects_Root = a_stScene.GetRootGameObjects();
+
+			for(int i = 0; i < oGameObjects_Root.Length; ++i)
+			{
+				a_oCallback?.Invoke(oGameObjects_Root[i]);
+			}
+		});
 	}
 	#endregion // 클래스 함수
 }

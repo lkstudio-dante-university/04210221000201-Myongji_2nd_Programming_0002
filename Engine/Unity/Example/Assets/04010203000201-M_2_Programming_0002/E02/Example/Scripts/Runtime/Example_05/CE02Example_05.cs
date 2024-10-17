@@ -1,5 +1,5 @@
-#define E02_EXAMPLE_05_01
-#define E02_EXAMPLE_05_02
+#define E_EXAMPLE_E02_EXAMPLE_05_01
+#define E_EXAMPLE_E02_EXAMPLE_05_02
 
 using System.Collections;
 using System.Collections.Generic;
@@ -80,7 +80,7 @@ namespace E02Example
 		{
 			base.Awake();
 
-#if E02_EXAMPLE_05_02
+#if E_EXAMPLE_E02_EXAMPLE_05_02
 			/*
 			 * Rigidbody.useGravity 프로퍼티는 중력 영향 여부를 변경하는 역할을 수행한다. (즉,
 			 * 해당 프로퍼티를 활성화하면 중력에 의해서 자동으로 중력이 작용하는 방향으로
@@ -88,7 +88,7 @@ namespace E02Example
 			 */
 			var oRigidbody = m_oGameObj_Target_02.GetComponent<Rigidbody>();
 			oRigidbody.useGravity = false;
-#endif // #if E02_EXAMPLE_05_02
+#endif // #if E_EXAMPLE_E02_EXAMPLE_05_02
 		}
 
 		/** 상태를 갱신한다 */
@@ -96,7 +96,7 @@ namespace E02Example
 		{
 			base.Update();
 
-#if E02_EXAMPLE_05_01
+#if E_EXAMPLE_E02_EXAMPLE_05_01
 			// 상 / 하 키를 눌렀을 경우
 			if(Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow))
 			{
@@ -128,7 +128,7 @@ namespace E02Example
 			{
 				Func.ShowLog($"{stRaycastHit.collider.name} 충돌");
 			}
-#elif E02_EXAMPLE_05_02
+#elif E_EXAMPLE_E02_EXAMPLE_05_02
 			// 발사가 불가능 할 경우
 			if(!m_bIsEnable_Shoot)
 			{
@@ -175,10 +175,10 @@ namespace E02Example
 			 * 영역을 설정하는 것이 가능하다.
 			 */
 			m_oUIImg_Guage.fillAmount = m_fRate_Charging_02;
-#endif // E02_EXAMPLE_05_01
+#endif // E_EXAMPLE_E02_EXAMPLE_05_01
 		}
 
-#if E02_EXAMPLE_05_01
+#if E_EXAMPLE_E02_EXAMPLE_05_01
 		/** 기즈모를 그린다 */
 		public void OnDrawGizmos()
 		{
@@ -197,7 +197,7 @@ namespace E02Example
 				Gizmos.color = stColor_Prev;
 			}
 		}
-#endif // #if E02_EXAMPLE_05_01
+#endif // #if E_EXAMPLE_E02_EXAMPLE_05_01
 		#endregion // 함수
 	}
 }

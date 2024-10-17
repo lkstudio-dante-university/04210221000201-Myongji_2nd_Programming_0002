@@ -47,9 +47,11 @@ public static partial class KDefine
 	public const string G_P_GAME_OBJ_UIS_EVENT_SYSTEM = "EventSystem";
 
 	public const string G_P_GAME_OBJ_UIS = "Canvas/UIs";
+	public const string G_P_GAME_OBJ_UIS_ROOT = "UIsRoot";
 	public const string G_P_GAME_OBJ_UIS_POPUP = "Canvas/UIsPopup";
 
 	public const string G_P_GAME_OBJ_OBJECTS = "Objects";
+	public const string G_P_GAME_OBJ_OBJECTS_ROOT = "Objects_Root";
 	public const string G_P_GAME_OBJ_OBJECTS_STATIC = "Objects_Static";
 	// 씬 관리자 }
 	#endregion // 컴파일 상수

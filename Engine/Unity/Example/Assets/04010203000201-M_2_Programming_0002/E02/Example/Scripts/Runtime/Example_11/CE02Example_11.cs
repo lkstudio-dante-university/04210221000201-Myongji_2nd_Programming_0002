@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using TMPro;
+using DG.Tweening;
 
 namespace E02Example
 {
@@ -25,6 +26,7 @@ namespace E02Example
 		#region 변수
 		[Header("=====> Example 11 - Etc <=====")]
 		private float m_fTime_Remain = 30.0f;
+		private Tween m_oAnim_CameraShake = null;
 
 		[Header("=====> Example 11 - UIs <=====")]
 		[SerializeField] private TMP_Text m_oTMP_UIText_Time = null;
@@ -45,6 +47,13 @@ namespace E02Example
 		{
 			base.Awake();
 			CE02Storage_Result_11.Inst.Reset();
+		}
+
+		/** 제거 되었을 경우 */
+		public override void OnDestroy()
+		{
+			base.OnDestroy();
+			m_oAnim_CameraShake?.Kill();
 		}
 
 		/** 상태를 갱신한다 */
@@ -118,6 +127,9 @@ namespace E02Example
 			}
 
 			oMoly.Catch();
+
+			var oAnim_CameraShake = this.Camera_Main.transform.DOShakePosition(0.05f, 0.15f);
+			Access.AssignVal(ref m_oAnim_CameraShake, oAnim_CameraShake);
 
 			int nScore = CE02Storage_Result_11.Inst.Score;
 			int nScore_Incr = (oMoly.Type == CE02Moly_11.EType.A) ? 10 : -20;

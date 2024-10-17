@@ -52,3 +52,42 @@ public static partial class Extension
 	}
 	#endregion // 클래스 함수
 }
+
+/**
+ * 확장 클래스 - 실수 (Double)
+ */
+public static partial class Extension
+{
+	#region 클래스 함수
+	/** 같음 여부를 검사한다 */
+	public static bool ExIsEquals(this double a_dblSender, double a_dblRhs)
+	{
+		return a_dblSender >= a_dblRhs - double.Epsilon && 
+			a_dblSender <= a_dblRhs + double.Epsilon;
+	}
+
+	/** 작음 여부를 검사한다 */
+	public static bool ExIsLess(this double a_dblSender, double a_dblRhs)
+	{
+		return a_dblSender < a_dblRhs - double.Epsilon;
+	}
+
+	/** 작거나 같음 여부를 검사한다 */
+	public static bool ExIsLessEquals(this double a_dblSender, double a_dblRhs)
+	{
+		return a_dblSender.ExIsLess(a_dblRhs) || a_dblSender.ExIsEquals(a_dblRhs);
+	}
+
+	/** 큰 여부를 검사한다 */
+	public static bool ExIsGreat(this double a_dblSender, double a_dblRhs)
+	{
+		return a_dblSender > a_dblRhs - double.Epsilon;
+	}
+
+	/** 크거나 같음 여부를 검사한다 */
+	public static bool ExIsGreatEquals(this double a_dblSender, double a_dblRhs)
+	{
+		return a_dblSender.ExIsGreat(a_dblRhs) || a_dblSender.ExIsEquals(a_dblRhs);
+	}
+	#endregion // 클래스 함수
+}
