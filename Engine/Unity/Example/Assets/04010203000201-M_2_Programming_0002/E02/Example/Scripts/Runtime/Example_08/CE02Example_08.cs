@@ -25,13 +25,13 @@ namespace E02Example
 		}
 
 		/** 다시하기 버튼을 눌렀을 경우 */
-		public void OnTouchUIBtn_Retry()
+		public void OnTouchBtn_Retry()
 		{
 			CLoader_Scene.Inst.LoadScene(KDefine.G_N_SCENE_E02_EXAMPLE_07);
 		}
 
 		/** 그만두기 버튼을 눌렀을 경우 */
-		public void OnTouchUIBtn_Leave()
+		public void OnTouchBtn_Leave()
 		{
 			CLoader_Scene.Inst.LoadScene(KDefine.G_N_SCENE_E02_EXAMPLE_06);
 		}

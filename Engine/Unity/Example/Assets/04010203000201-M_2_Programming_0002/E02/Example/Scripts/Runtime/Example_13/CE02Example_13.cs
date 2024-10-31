@@ -1,9 +1,12 @@
-#define E_EXAMPLE_E02_EXAMPLE_13_01
+//#define E_EXAMPLE_E02_EXAMPLE_13_01
 #define E_EXAMPLE_E02_EXAMPLE_13_02
 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+using UnityEngine.UI;
+using TMPro;
 
 /*
  * Unity UI 제작 방법
@@ -43,7 +46,12 @@ namespace E02Example
 	public partial class CE02Example_13 : CManager_Scene
 	{
 		#region 변수
+		[Header("=====> Example 13 - UIs <=====")]
+		[SerializeField] private Text m_oUIText_02 = null;
+		[SerializeField] private TMP_Text m_oTMP_UIText_02 = null;
+		[SerializeField] private TMP_InputField m_oTMP_UIInputField_02 = null;
 
+		[SerializeField] private Button m_oUIBtn_02 = null;
 		#endregion // 변수
 
 		#region 함수
@@ -51,6 +59,16 @@ namespace E02Example
 		public override void Awake()
 		{
 			base.Awake();
+
+#if E_EXAMPLE_E02_EXAMPLE_13_02
+			m_oUIText_02.text = "Legacy Text";
+			m_oTMP_UIText_02.text = "Text Mesh Pro";
+
+			m_oUIBtn_02.onClick.AddListener(this.OnTouchBtn);
+
+			m_oTMP_UIInputField_02.onEndEdit.AddListener(this.OnEndEdit_InputField);
+			m_oTMP_UIInputField_02.onValueChanged.AddListener(this.OnChangeVal_InputField);
+#endif // #if E_EXAMPLE_E02_EXAMPLE_13_02
 		}
 
 #if E_EXAMPLE_E02_EXAMPLE_13_01
@@ -66,7 +84,23 @@ namespace E02Example
 			}
 		}
 #elif E_EXAMPLE_E02_EXAMPLE_13_02
+		/** 버튼을 눌렀을 경우 */
+		private void OnTouchBtn()
+		{
+			Func.ShowLog("OnTouchBtn");
+		}
 
+		/** 입력이 완료되었을 경우 */
+		private void OnEndEdit_InputField(string a_oStr)
+		{
+			Func.ShowLog("OnEndEdit_InputField: {0}", a_oStr);
+		}
+
+		/** 입력 필드가 변경되었을 경우 */
+		private void OnChangeVal_InputField(string a_oStr)
+		{
+			Func.ShowLog("OnChangeVal_InputField: {0}", a_oStr);
+		}
 #endif // #if E_EXAMPLE_E02_EXAMPLE_13_01
 		#endregion // 함수
 	}

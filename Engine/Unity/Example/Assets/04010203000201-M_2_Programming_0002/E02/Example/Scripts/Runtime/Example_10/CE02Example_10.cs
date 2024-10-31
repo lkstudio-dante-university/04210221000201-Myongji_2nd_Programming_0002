@@ -17,7 +17,7 @@ namespace E02Example
 		}
 
 		/** 플레이 버튼을 눌렀을 경우 */
-		public void OnTouchUIBtn_Play()
+		public void OnTouchBtn_Play()
 		{
 			CLoader_Scene.Inst.LoadScene(KDefine.G_N_SCENE_E02_EXAMPLE_11);
 		}

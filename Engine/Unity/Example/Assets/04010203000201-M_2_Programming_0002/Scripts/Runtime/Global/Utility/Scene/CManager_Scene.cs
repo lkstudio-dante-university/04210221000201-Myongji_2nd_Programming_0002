@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering.Universal;
@@ -12,6 +13,9 @@ using UnityEngine.Rendering.Universal;
 public partial class CManager_Scene : CComponent
 {
 	#region 프로퍼티
+	public virtual bool IsEnable_BackBtn => this.UIsCanvas != null;
+	public Button UIBtn_Back { get; private set; } = null;
+
 	public Light Light_Main { get; private set; } = null;
 	public Camera Camera_Main { get; private set; } = null;
 
@@ -46,6 +50,15 @@ public partial class CManager_Scene : CComponent
 		Physics.gravity = KDefine.G_UNIT_GRAVITY;
 
 		this.SetupScene(true);
+
+		// 뒤로가기 버튼 생성이 가능 할 경우
+		if(this.IsScene_Active && this.IsEnable_BackBtn)
+		{
+			this.UIBtn_Back = Factory.CreateGameObj_Clone<Button>("UIBtn_Back",
+				"Prefabs/Global/G_Prefab_UIBtn_Back", this.UIsCanvas.gameObject);
+
+			this.UIBtn_Back.onClick.AddListener(this.OnTouchBtn_Back);
+		}
 	}
 
 	/** 초기화 */
@@ -55,6 +68,16 @@ public partial class CManager_Scene : CComponent
 		Time.timeScale = this.IsScene_Active ? 1.0f : Time.timeScale;
 
 		this.SetupScene(false);
+
+		// 뒤로가기 버튼이 존재 할 경우
+		if(this.UIBtn_Back != null)
+		{
+			var oRectTrans = this.UIBtn_Back.transform as RectTransform;
+			oRectTrans.pivot = new Vector2(0.0f, 1.0f);
+			oRectTrans.anchorMin = new Vector2(0.0f, 1.0f);
+			oRectTrans.anchorMax = new Vector2(0.0f, 1.0f);
+			oRectTrans.anchoredPosition = Vector2.zero;
+		}
 	}
 
 	/** 제거되었을 경우 */
@@ -79,7 +102,7 @@ public partial class CManager_Scene : CComponent
 		// 백 키를 눌렀을 경우
 		if(bIsDown_BackKey)
 		{
-			CLoader_Scene.Inst.LoadScene(KDefine.G_N_SCENE_E02_EXAMPLE_00);
+			this.OnTouchBtn_Back();
 		}
 	}
 
@@ -227,6 +250,18 @@ public partial class CManager_Scene : CComponent
 			{
 				oBaseInputModules[j].enabled = this.IsScene_Active;
 			}
+		}
+	}
+
+	/** 뒤로가기 버튼을 눌렀을 경우 */
+	protected virtual void OnTouchBtn_Back()
+	{
+		bool bIsEnable_Back = !CManager_Scene.ActiveScene_Name.Equals(KDefine.G_N_SCENE_E02_EXAMPLE_00);
+
+		// 뒤로가기가 가능 할 경우
+		if(bIsEnable_Back)
+		{
+			CLoader_Scene.Inst.LoadScene(KDefine.G_N_SCENE_E02_EXAMPLE_00);
 		}
 	}
 	#endregion // 클래스 함수
