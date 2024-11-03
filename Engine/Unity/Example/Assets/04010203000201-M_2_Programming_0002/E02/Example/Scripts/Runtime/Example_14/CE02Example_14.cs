@@ -1,3 +1,6 @@
+//#define E01_EXAMPLE_14_01
+#define E01_EXAMPLE_14_02
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -48,7 +51,11 @@ namespace E02Example
 	public partial class CE02Example_14 : CManager_Scene
 	{
 		#region 변수
+		[Header("=====> Example 14 - Etc <=====")]
+		[SerializeField] private AudioClip m_oAudioClip_SFX_01 = null;
 
+		[SerializeField] private AudioSource m_oAudioSource_BGM_01 = null;
+		[SerializeField] private AudioSource m_oAudioSource_SFX_01 = null;
 		#endregion // 변수
 
 		#region 함수
@@ -56,25 +63,46 @@ namespace E02Example
 		public override void Awake()
 		{
 			base.Awake();
+
+			m_oAudioSource_BGM_01.Stop();
+			m_oAudioSource_BGM_01.playOnAwake = false;
+
+			m_oAudioSource_SFX_01.Stop();
+			m_oAudioSource_SFX_01.playOnAwake = false;
 		}
 
 		/** 배경음 버튼을 눌렀을 경우 */
 		public void OnTouchBtn_BGM()
 		{
-			// Do Something
+#if E01_EXAMPLE_14_01
+			m_oAudioSource_BGM_01.Play();
+			m_oAudioSource_BGM_01.loop = true;
+#else
+			CManager_Snd.Inst.PlayBGM("Example_14/E02Snd_BGM");
+#endif // E01_EXAMPLE_14_01
 		}
 
 		/** 효과음 A 버튼을 눌렀을 경우 */
 		public void OnTouchBtn_SFX_A()
 		{
-			// Do Something
+#if E01_EXAMPLE_14_01
+			m_oAudioSource_SFX_01.Play();
+			m_oAudioSource_SFX_01.loop = true;
+#else
+			CManager_Snd.Inst.PlaySFX("Example_14/E02Snd_SFX_01");
+#endif // E01_EXAMPLE_14_01
 		}
 
 		/** 효과음 B 버튼을 눌렀을 경우 */
 		public void OnTouchBtn_SFX_B()
 		{
-			// Do Something
+#if E01_EXAMPLE_14_01
+			AudioSource.PlayClipAtPoint(m_oAudioClip_SFX_01, 
+				this.Camera_Main.transform.position, 1.0f);
+#else
+			CManager_Snd.Inst.PlaySFX("Example_14/E02Snd_SFX_02");
+#endif // E01_EXAMPLE_14_01
 		}
-#endregion // 함수
+		#endregion // 함수
 	}
 }
