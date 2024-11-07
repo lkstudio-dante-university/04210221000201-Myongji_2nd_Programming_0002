@@ -38,6 +38,12 @@ public static partial class KDefine
 	public const string G_N_SCENE_E02_EXAMPLE_10 = "E02Example_10 (Moly Moly - Start)";
 	public const string G_N_SCENE_E02_EXAMPLE_11 = "E02Example_11 (Moly Moly - Play)";
 	public const string G_N_SCENE_E02_EXAMPLE_12 = "E02Example_12 (Moly Moly - Result)";
+	public const string G_N_SCENE_E02_EXAMPLE_13 = "E02Example_13 (GUI)";
+	public const string G_N_SCENE_E02_EXAMPLE_14 = "E02Example_14 (Sound)";
+	public const string G_N_SCENE_E02_EXAMPLE_15 = "E02Example_15 (Mecanim)";
+	public const string G_N_SCENE_E02_EXAMPLE_16 = "E02Example_16 (3D TPS - Start)";
+	public const string G_N_SCENE_E02_EXAMPLE_17 = "E02Example_17 (3D TPS - Play)";
+	public const string G_N_SCENE_E02_EXAMPLE_18 = "E02Example_18 (3D TPS - Result)";
 
 	// 씬 관리자 {
 	public const string G_P_GAME_OBJ_LIGHT_MAIN = "Light_Main";
