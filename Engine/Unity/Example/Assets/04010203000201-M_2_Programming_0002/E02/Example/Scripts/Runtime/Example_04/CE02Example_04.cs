@@ -82,8 +82,10 @@ namespace E02Example
 		}
 
 		/** 상태를 갱신한다 */
-		public void FixedUpdate()
+		public override void FixedUpdate()
 		{
+			base.FixedUpdate();
+
 			var stPosA = m_oPlayer.transform.localPosition + (Vector3.up * 150.0f);
 			stPosA = stPosA.ExToWorld(m_oPlayer.transform.parent.gameObject);
 

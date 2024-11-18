@@ -23,10 +23,10 @@ namespace E02Example
 		}
 
 		/** 상태를 갱신한다 */
-		public override void Update()
+		public override void FixedUpdate()
 		{
 			base.Update();
-			m_oPlayer.OnUpdate(Time.deltaTime);
+			m_oPlayer.OnUpdate(Time.fixedDeltaTime);
 		}
 		#endregion // 함수
 	}

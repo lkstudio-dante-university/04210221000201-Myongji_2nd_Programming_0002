@@ -106,6 +106,12 @@ public partial class CManager_Scene : CComponent
 		}
 	}
 
+	/** 상태를 갱신한다 */
+	public virtual void FixedUpdate()
+	{
+		// Do Something
+	}
+
 	/** 씬을 설정한다 */
 	public virtual void SetupScene(bool a_bIsAwake)
 	{
