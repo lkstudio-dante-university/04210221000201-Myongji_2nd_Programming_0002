@@ -141,7 +141,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.cinemachine": {
-      "version": "2.10.1",
+      "version": "2.10.3",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -202,7 +202,7 @@
       "dependencies": {
         "com.unity.animation.rigging": "1.2.1",
         "com.unity.timeline": "1.7.6",
-        "com.unity.cinemachine": "2.10.1",
+        "com.unity.cinemachine": "2.10.3",
         "com.unity.formats.fbx": "4.2.1"
       }
     },
@@ -215,7 +215,7 @@
         "com.unity.sequences": "2.0.1",
         "com.unity.formats.fbx": "4.2.1",
         "com.unity.formats.alembic": "2.3.2",
-        "com.unity.cinemachine": "2.10.1",
+        "com.unity.cinemachine": "2.10.3",
         "com.unity.recorder": "4.0.3"
       }
     },
@@ -238,7 +238,7 @@
       "depth": 0,
       "source": "builtin",
       "dependencies": {
-        "com.unity.cinemachine": "2.10.1",
+        "com.unity.cinemachine": "2.10.3",
         "com.unity.timeline": "1.7.6",
         "com.unity.visualscripting": "1.9.4"
       }
