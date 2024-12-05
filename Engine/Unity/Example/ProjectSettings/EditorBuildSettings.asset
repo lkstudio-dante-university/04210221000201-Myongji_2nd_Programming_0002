@@ -6,84 +6,85 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/04010203000201-M_2_Programming_0002/E02/Example/Scenes/E02Example_00
+    path: Assets/04010203000201-Myongji_2nd_Programming_0002/E02/Example/Scenes/E02Example_00
       (Menu).unity
     guid: ea6775402cc04c64b8620a6813542301
   - enabled: 1
-    path: Assets/04010203000201-M_2_Programming_0002/E02/Example/Scenes/E02Example_01
+    path: Assets/04010203000201-Myongji_2nd_Programming_0002/E02/Example/Scenes/E02Example_01
       (Basic).unity
     guid: ad320bf4a3064594f93bbc18e1c5aa19
   - enabled: 1
-    path: Assets/04010203000201-M_2_Programming_0002/E02/Example/Scenes/E02Example_02
+    path: Assets/04010203000201-Myongji_2nd_Programming_0002/E02/Example/Scenes/E02Example_02
       (Light, Camera).unity
     guid: 40332504aab41904597010bc26434e0c
   - enabled: 1
-    path: Assets/04010203000201-M_2_Programming_0002/E02/Example/Scenes/E02Example_03
+    path: Assets/04010203000201-Myongji_2nd_Programming_0002/E02/Example/Scenes/E02Example_03
       (Prefab, Script - 1).unity
     guid: e0fa2cd17747ddb4a8c75397b39cfc94
   - enabled: 1
-    path: Assets/04010203000201-M_2_Programming_0002/E02/Example/Scenes/E02Example_04
+    path: Assets/04010203000201-Myongji_2nd_Programming_0002/E02/Example/Scenes/E02Example_04
       (Prefab, Script - 2).unity
     guid: 0699888bd8abc1c479b011fed2e26c66
   - enabled: 1
-    path: Assets/04010203000201-M_2_Programming_0002/E02/Example/Scenes/E02Example_05
+    path: Assets/04010203000201-Myongji_2nd_Programming_0002/E02/Example/Scenes/E02Example_05
       (Physics).unity
     guid: cbd4928a647615b44bd5f9d01aaf8ebe
   - enabled: 1
-    path: Assets/04010203000201-M_2_Programming_0002/E02/Example/Scenes/E02Example_06
+    path: Assets/04010203000201-Myongji_2nd_Programming_0002/E02/Example/Scenes/E02Example_06
       (Flappy Bird - Start).unity
     guid: 1af1bce902e6f0546ababbfeecad1b13
   - enabled: 1
-    path: Assets/04010203000201-M_2_Programming_0002/E02/Example/Scenes/E02Example_07
+    path: Assets/04010203000201-Myongji_2nd_Programming_0002/E02/Example/Scenes/E02Example_07
       (Flappy Bird - Play).unity
     guid: e3a1b7fc99584f24b8c3523e56eedab4
   - enabled: 1
-    path: Assets/04010203000201-M_2_Programming_0002/E02/Example/Scenes/E02Example_08
+    path: Assets/04010203000201-Myongji_2nd_Programming_0002/E02/Example/Scenes/E02Example_08
       (Flappy Bird - Result).unity
     guid: c1f96a78f62cadb46b1c73861a88a6a9
   - enabled: 1
-    path: Assets/04010203000201-M_2_Programming_0002/E02/Example/Scenes/E02Example_09
+    path: Assets/04010203000201-Myongji_2nd_Programming_0002/E02/Example/Scenes/E02Example_09
       (Sprite, Animation).unity
     guid: fd9b475907ff1b3429419d6f1d57cf90
   - enabled: 1
-    path: Assets/04010203000201-M_2_Programming_0002/E02/Example/Scenes/E02Example_10
+    path: Assets/04010203000201-Myongji_2nd_Programming_0002/E02/Example/Scenes/E02Example_10
       (Moly Moly - Start).unity
     guid: 525725a3c4c989541a5ef998623384e0
   - enabled: 1
-    path: Assets/04010203000201-M_2_Programming_0002/E02/Example/Scenes/E02Example_11
+    path: Assets/04010203000201-Myongji_2nd_Programming_0002/E02/Example/Scenes/E02Example_11
       (Moly Moly - Play).unity
     guid: e3ce8aeda5f7645479cd7c6cb6d85321
   - enabled: 1
-    path: Assets/04010203000201-M_2_Programming_0002/E02/Example/Scenes/E02Example_12
+    path: Assets/04010203000201-Myongji_2nd_Programming_0002/E02/Example/Scenes/E02Example_12
       (Moly Moly - Result).unity
     guid: 137288f8a3a75374189b6f1713ac575b
   - enabled: 1
-    path: Assets/04010203000201-M_2_Programming_0002/E02/Example/Scenes/E02Example_13
+    path: Assets/04010203000201-Myongji_2nd_Programming_0002/E02/Example/Scenes/E02Example_13
       (GUI).unity
     guid: 8ff95a4839dc98e44aa267bdd8a83da3
   - enabled: 1
-    path: Assets/04010203000201-M_2_Programming_0002/E02/Example/Scenes/E02Example_14
+    path: Assets/04010203000201-Myongji_2nd_Programming_0002/E02/Example/Scenes/E02Example_14
       (Sound).unity
     guid: edc2d30943a478f479c0cc39700555d3
   - enabled: 1
-    path: Assets/04010203000201-M_2_Programming_0002/E02/Example/Scenes/E02Example_15
+    path: Assets/04010203000201-Myongji_2nd_Programming_0002/E02/Example/Scenes/E02Example_15
       (Mecanim).unity
     guid: e4f8a2787b97a51498267e3e9a4aaae7
   - enabled: 1
-    path: Assets/04010203000201-M_2_Programming_0002/E02/Example/Scenes/E02Example_16
+    path: Assets/04010203000201-Myongji_2nd_Programming_0002/E02/Example/Scenes/E02Example_16
       (3D TPS - Start).unity
     guid: 6b2989b32baff23459d13430068cfb30
   - enabled: 1
-    path: Assets/04010203000201-M_2_Programming_0002/E02/Example/Scenes/E02Example_17
+    path: Assets/04010203000201-Myongji_2nd_Programming_0002/E02/Example/Scenes/E02Example_17
       (3D TPS - Play).unity
     guid: 51fd30444d64b1d4a9a18bf934dc2074
   - enabled: 1
-    path: Assets/04010203000201-M_2_Programming_0002/E02/Example/Scenes/E02Example_18
+    path: Assets/04010203000201-Myongji_2nd_Programming_0002/E02/Example/Scenes/E02Example_18
       (3D TPS - Result).unity
     guid: 4b0b808417efb834ab85f97d7fae29b0
   - enabled: 1
-    path: Assets/04010203000201-M_2_Programming_0002/E02/Example/Scenes/E02Example_19
+    path: Assets/04010203000201-Myongji_2nd_Programming_0002/E02/Example/Scenes/E02Example_19
       (AI Navigation).unity
     guid: ced841bfef3312443aa57bfbb9e33c49
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 368115d1aa65eed4b940413859edc8f3, type: 2}
+  m_UseUCBPForAssetBundles: 0
