@@ -61,7 +61,7 @@ namespace Example
 	internal class Program
 	{
 		/** 메인 메서드 */
-		public static void Main(string[] args)
+		static void Main(string[] args)
 		{
 #if EXAMPLE
 			/*
