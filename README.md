@@ -1,2 +1,2 @@
-# 4123000201.University_2ndProgramming_0002
-University - 2ndProgramming 2 기 프로젝트
+# 04210203000201-Myongji_2nd_Programming_0002
+Myongji - 2 학년 프로그래밍 과목 2 기 프로젝트
