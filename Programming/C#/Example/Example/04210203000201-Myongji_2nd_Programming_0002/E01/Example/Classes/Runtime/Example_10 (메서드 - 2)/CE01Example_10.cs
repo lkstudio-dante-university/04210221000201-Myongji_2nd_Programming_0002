@@ -132,7 +132,7 @@ namespace Example._04210203000201_Myongji_2nd_Programming_0002.E01.Example.Class
 			var oListValues = new List<int>();
 			SetupValues(oListValues, 10);
 
-			Console.WriteLine("=====> 리스트 요소 <=====");
+			Console.WriteLine("=====> 리스트 <=====");
 			PrintValues(oListValues);
 
 			var stResult = GetValMinMax(oListValues);
